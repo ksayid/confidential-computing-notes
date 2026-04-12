@@ -83,8 +83,8 @@ Linux namespaces isolate resources at the kernel level, ensuring each container 
     * Docker, Podman, and other engines integrate with SELinux/AppArmor profiles.
 
 ## Docker Architecture and Components
-![alt text](../img/image-1.png)
-![alt text](../img/image-2.png)
+![Docker architecture overview](../img/docker-architecture-overview.png)
+![Docker containerd and shim flow](../img/docker-containerd-shim-flow.png)
 
 ### Docker Engine (Client-Server Model)
 * Docker CLI: User-facing command-line tool (docker build, docker run, etc.).
@@ -151,4 +151,10 @@ Hyper-V Containers thus strike a balance between:
 * Stronger Isolation: Similar to Hyper-V containers, but for Linux—no direct host-kernel sharing.
 * Performance vs. Security: Adds some overhead compared to native containers, but significantly enhances security boundaries.
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>
+## Containers vs. Confidential VMs
+- **Containers**: OS-level isolation; rely on kernel namespaces/cgroups.  
+- **CVMs**: Hardware-level memory encryption and isolation; the hypervisor cannot see inside them.  
+- Confidential VMs are specifically focused on cryptographically securing data "in use" from even the underlying cloud/hardware host.  
+- A container can run inside a CVM for additional defense in depth, but that typically comes with extra performance overhead.
+
+<script src="{{ ‘/assets/js/dark-mode.js’ | relative_url }}"></script>

@@ -8,6 +8,31 @@ layout: default
 * TOC
 {:toc}
 
+# Kubernetes
+
+Kubernetes is a container orchestration platform. In the context of confidential computing, it raises questions about trust boundaries, secret storage, and workload isolation.
+
+## Confidential Computing in Kubernetes
+1. **Option 1: "Wrap the whole cluster"**  
+   - Run the control plane and worker nodes inside confidential VMs so that the cloud provider (and other tenants) cannot access your cluster data.  
+   - Straightforward if you trust all cluster components and just want to shield them from the outside world.
+
+2. **Option 2: Per-Node or Per-Workload TEE**  
+   - Harder if you need to protect a single worker node from an untrusted admin in the same cluster.  
+   - The kubelet generally has broad control over pods, which can undermine TEE guarantees.  
+   - True multi-tenant "untrusted admin" approaches require more careful design (e.g., ephemeral micro-VMs for each pod).
+
+## Multi-tenant vs. Single-tenant Security
+- Major cloud providers often run Kubernetes in multi-tenant ways (shared control plane, multi-tenant etcd).  
+- Confidential computing (enclaves, CVMs) shields your workload from external threats, but not necessarily from other components in the same logical environment if they share trust boundaries.
+
+## Storing Secrets & etcd
+- Confidential computing alone does not fully solve storing secrets in Kubernetes etcd.  
+- You could isolate etcd in an enclave, but architectural changes might be required.  
+- Evaluate your threat model to see if enclaves add enough protection for your use case.
+
+**See also:** [Kata Containers]({{ "docs/containers/kata-containers/" | relative_url }}), [Confidential Containers]({{ "docs/containers/confidential-containers/" | relative_url }})
+
 ## Helm
 Helm is an open-source tool that helps you define, install, and manage applications in Kubernetes. Often described as the “package manager for Kubernetes,” Helm bundles Kubernetes manifests (such as Deployments, Services, and ConfigMaps) into reusable, version-controlled “charts.” Using charts, you can:
 

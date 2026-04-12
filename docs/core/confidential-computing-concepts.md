@@ -98,30 +98,6 @@ A CVM is a virtual machine that uses hardware-level memory encryption to protect
   - Encryption mechanisms like AES-GCM can detect malicious bit-flips in memory.  
 - **Availability**: TEEs/CVMs do not inherently guarantee availability—cloud providers can still suspend or terminate the VM. Availability relies on provider SLAs, redundancy, etc.
 
-### Confidential Computing in Kubernetes
-1. **Option 1: “Wrap the whole cluster”**  
-   - Run the control plane and worker nodes inside confidential VMs so that the cloud provider (and other tenants) cannot access your cluster data.  
-   - Straightforward if you trust all cluster components and just want to shield them from the outside world.
-
-2. **Option 2: Per-Node or Per-Workload TEE**  
-   - Harder if you need to protect a single worker node from an untrusted admin in the same cluster.  
-   - The kubelet generally has broad control over pods, which can undermine TEE guarantees.  
-   - True multi-tenant “untrusted admin” approaches require more careful design (e.g., ephemeral micro-VMs for each pod).
-
-### Multi-tenant vs. Single-tenant Security
-- Major cloud providers often run Kubernetes in multi-tenant ways (shared control plane, multi-tenant etcd).  
-- Confidential computing (enclaves, CVMs) shields your workload from external threats, but not necessarily from other components in the same logical environment if they share trust boundaries.
-
-### Storing Secrets & etcd
-- Confidential computing alone does not fully solve storing secrets in Kubernetes etcd.  
-- You could isolate etcd in an enclave, but architectural changes might be required.  
-- Evaluate your threat model to see if enclaves add enough protection for your use case.
-
-### Confidential Containers (COCO)
-- COCO integrates Kubernetes with confidential computing primitives to run each pod inside a confidential VM.  
-- Builds on Kata Containers or AWS Firecracker, but adds memory encryption + remote attestation to ensure stronger isolation for each container.  
-- Gives the regular “pod” interface but behind the scenes uses hardware-level isolation.
-
 ### Performance Overhead
 - Enabling confidential computing (CVMs, enclaves) typically introduces a small overhead (1–5%, sometimes up to 10% in heavy I/O scenarios).  
 - Often acceptable in scenarios dealing with highly sensitive data (finance, healthcare, secure ML, etc.).
@@ -130,11 +106,6 @@ A CVM is a virtual machine that uses hardware-level memory encryption to protect
 - Remote attestation offers cryptographic proof of what’s running inside the environment (e.g., OS, binaries).  
 - Useful for verifiable build runners (CI/CD): you can store an attestation report proving your build toolchain is unmodified.  
 - Strengthens the software supply chain by ensuring no tampering with the build environment.
-
-### Confidential Virtual Machines (CVMs) and TEEs
-- CVMs are an easy-to-use approach offered by many cloud providers for confidential computing.  
-- They isolate workloads such that even the cloud provider’s hypervisor can’t see inside.  
-- Attestation verifies the VM at the hardware level.
 
 ### Trusted Platform Modules (TPMs) vs. Hardware Security Modules (HSMs)
 - **TPMs**:
@@ -145,12 +116,6 @@ A CVM is a virtual machine that uses hardware-level memory encryption to protect
   - More expensive, typically used in large enterprises or regulated industries.  
   - Perform cryptographic operations on dedicated hardware; keys never leave the secure device.  
   - Often have anti-tampering mechanisms to protect secrets if physically attacked.
-
-### Containers vs. CVMs
-- **Containers**: OS-level isolation; rely on kernel namespaces/cgroups.  
-- **CVMs**: Hardware-level memory encryption and isolation; the hypervisor cannot see inside them.  
-- Confidential VMs are specifically focused on cryptographically securing data “in use” from even the underlying cloud/hardware host.  
-- A container can run inside a CVM for additional defense in depth, but that typically comes with extra performance overhead.
 
 ## Offerings in Confidential Computing
 ### Capability Level
@@ -199,53 +164,4 @@ Even if the TCB itself is trustworthy, it must be attested (verified) by a party
 
 **Potential Conflict**: Relying on the CSP’s own attestation service can introduce a conflict of interest. Unless there is a legally separate business unit with its own governance, a single CSP acting as both the platform operator and the attestation authority can undermine the independence required for truly confidential workloads. Consequently, many enterprises prefer to use truly independent attestation—either run by themselves (first-party) or by a trusted, external third-party.
 
-#### Additional Overview of Confidential Computing
-
-### What is Confidential Computing?
-**Confidential Computing** protects data **in use** by performing computation inside a hardware-based, attested trusted execution environment (TEE) or similar construct.  
-- **Data at rest**: Typically protected by disk encryption.  
-- **Data in transit**: Typically protected by TLS or other network encryption.  
-- **Data in use**: This is where confidential computing solutions come in, encrypting the data in memory and isolating it from the rest of the system.
-
-The key innovation is **reducing the number of trusted parties or components**. By moving security guarantees into the lowest layers of hardware (with minimal dependencies), you remove operating system vendors, driver vendors, platform providers, and service-provider admins from your circle of trust. This drastically lowers risk of compromise if any of those layers are breached.
-
----
-
-#### Attestation Models (Analogy)
-**What is attestation?**  
-- The “**Passport/Driver’s License**” model: You don’t trust the individual directly, but you trust the official document they present—similarly, you trust the enclave because it presents a valid hardware-signed attestation.
-- The “**Background Check**” model: You thoroughly investigate the entity’s environment to decide if you trust it. This is a deeper, more manual version of verifying software, hardware, logs, etc.
-
----
-
-#### Enclave Properties Recap
-1. **Isolation**  
-   Enclaves act independently from the rest of the system. No other component—even the OS or hypervisor—can access enclave memory.
-
-2. **Runtime Memory Encryption**  
-   Anything processed or stored inside the enclave is always encrypted in memory.
-
-3. **Sealing**  
-   An enclave can securely store data on untrusted storage by encrypting and binding it to the enclave’s identity.
-
-4. **Remote Attestation**  
-   An enclave can prove to a remote party that it’s running on genuine secure hardware, and that its code/configuration have not been tampered with.
-
----
-
-#### Use Cases
-- **Regulatory Compliance (GDPR, HIPAA)**: Encrypted data in enclaves helps fulfill stringent requirements.  
-- **Encourage Data Sharing**: Cloud-based data analytics or ML training without exposing raw data.  
-- **Multi-party Computations**: Different organizations securely combine sensitive data for analytics (e.g., healthcare or finance).  
-- **Fraud Detection**: Retailers and credit-card companies can share data for collaborative fraud detection inside a TEE.  
-- **Automotive / IoT**: Sensor data from vehicles can be analyzed securely in an enclave.  
-
----
-
-#### Another View on Remote Attestation
-Think of a secure enclave as a **super-secure black box**. You provide the code and data to this black box, and it processes them while preventing any outside party from peeking in.  
-- You get a **certificate** (quote) that states the results were produced by your specific code and data.  
-- This certificate is signed by a private key unique to the CPU (or TEE device).  
-- A remote party can verify the signature and confirm the legitimacy of the enclave and the processed data.
-
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>
+<script src=”{{ ‘/assets/js/dark-mode.js’ | relative_url }}”></script>
