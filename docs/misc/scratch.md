@@ -251,7 +251,7 @@ search_exclude: true
 - <https://arxiv.org/html/2408.00443v1>
 - <https://arxiv.org/pdf/2410.05930>
 - <https://www.nist.gov/system/files/documents/2024/06/11/02-OzgaGHSPLD.pdf>
-- <https://www.www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-96.pdf>
+- <https://www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-96.pdf>
 - <https://gts3.org/assets/papers/2017/seo:sgx-shield.pdf>
 - <https://dl.acm.org/doi/abs/10.1145/3590140.3629124>
 - <https://www.cs.cornell.edu/fbs/publications/UBP.SGX.pdf>
