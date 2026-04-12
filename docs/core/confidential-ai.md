@@ -1,14 +1,9 @@
 ---
 title: Confidential AI
-layout: default
+parent: Core Concepts
+nav_order: 6
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-# How Confidential Computing Works
 Confidential computing relies on trusted execution environments (TEEs), which create a secure perimeter where data remains encrypted in use. These environments provide the abstraction of data being encrypted at all times—from the perspective of an attacker, even someone with root privileges or access to the hypervisor. In essence, TEEs ensure that:
 * Data is processed securely within the enclave.
 * Even privileged users, such as system administrators, cannot access the plaintext data.

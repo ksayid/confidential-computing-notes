@@ -1,15 +1,8 @@
 ---
 title: Encrypted Filesystem
-layout: default
+parent: Core Concepts
+nav_order: 4
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Foundations
 
 A **filesystem** is responsible for organizing, storing, and retrieving data on a storage device, like a hard drive or SSD. It manages files and directories and controls how data is stored and retrieved. The goal of a cryptographic file system is to secure data stored on disk through encryption. Without the correct encryption key, the data is unreadable to unauthorized users. 
 
@@ -32,4 +25,3 @@ The sidecar is a form of **volume encryption**.
 ## Encrypted file system sidecar
 Confidential containers on Azure Container Instances provide a sidecar container to mount a remote encrypted filesystem previously uploaded to Azure Blob Storage. The sidecar container transparently retrieves the hardware attestation and the certificate chain endorsing the attestation’s signing key. It then requests Microsoft Azure Attestation to authorize an attestation token, which is required for securely releasing the filesystem’s encryption key from the managed HSM. The key is released to the sidecar container only if the attestation token is signed by the expected authority and the attestation claims match the key’s release policy. The sidecar container transparently uses the key to mount the remote encrypted filesystem; this process will preserve the confidentiality and integrity of the filesystem upon any operation from a container that is running within the container group.
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

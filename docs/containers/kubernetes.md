@@ -1,14 +1,8 @@
 ---
 title: Kubernetes
-layout: default
+parent: Container Technologies
+nav_order: 4
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-# Kubernetes
 
 Kubernetes is a container orchestration platform. In the context of confidential computing, it raises questions about trust boundaries, secret storage, and workload isolation.
 
@@ -57,4 +51,3 @@ A typical Helm chart has a standardized file and directory layout:
 * values.yaml: Defines the default configuration values for the chart. Users can override these defaults during helm install or helm upgrade by providing their own values file or command-line parameters.
 * templates/: Holds the template files. When Helm renders a chart, all files in this directory are processed through the Go templating engine. The resulting Kubernetes manifests are then submitted to the cluster.
 * charts/:  May contain other charts, often referred to as "subcharts." These subcharts can be dependencies, allowing you to compose multiple charts together into a larger application stack.
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

@@ -1,18 +1,12 @@
 ---
 title: Open Policy Agent
-layout: default
+parent: Tools & Frameworks
+nav_order: 2
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Open Policy Agent
 > "Treat policy as a separate concern....just like DB, messaging, monitoring, logging, orchestration, CI/CD ..." - Torin Sandall, Co-Creator, OPA
 
-# Introduction
+## Introduction
 
 Open Policy Agent (OPA) is an open source, general‑purpose policy engine. Instead
 of baking authorization or configuration rules directly into your
@@ -38,4 +32,3 @@ service itself.
   ensure infrastructure-as-code or container images conform to organizational
   standards.
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

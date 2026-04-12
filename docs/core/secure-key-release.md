@@ -1,15 +1,9 @@
 ---
 title: Secure Key Release
-layout: default
+parent: Core Concepts
+nav_order: 3
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Secure Key Release
 ## Key Management System (KMS)
 A KMS is a piece of software that performs cryptographic operations (such as encryption and managing private keys). It is usually embedded inside a secure hardware component or inside hardware security modules (also referred to as HSMs).
 
@@ -84,4 +78,3 @@ Key differences in Secure Key Release:
     * Matches the claims in the Environment Assertion against the Key Vault’s requirements.
 
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>
