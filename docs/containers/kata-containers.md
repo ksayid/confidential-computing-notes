@@ -1,15 +1,8 @@
 ---
 title: Kata Containers
-layout: default
+parent: Container Technologies
+nav_order: 2
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Kata Containers
 
 **Kata Containers** is an open-source project providing lightweight virtual machines (VMs) with the agility and speed of traditional containers. By merging hardware virtualization and containerization, Kata offers stronger isolation while retaining near-native performance. It originated from two projects:
 * **Intel Clear Containers**, which introduced lightweight VMs tailored for container security.
@@ -274,4 +267,3 @@ By blending Kata Containers with Azure’s Confidential Containers on AKS, you g
 * Attestation for Trust: Workload owners verify the correct software stack is running before releasing secrets, ensuring end-to-end confidentiality.
 
 This powerful combination of nested confidential virtualization on Azure, the Kata Containers runtime, and Open Policy Agent–based security policies helps ensure your containerized workloads remain confidential—even in a multi-tenant environment with untrusted hosts or operators.
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

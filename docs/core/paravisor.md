@@ -1,14 +1,8 @@
 ---
 title: Paravisor: Secure Execution in Confidential Computing
-layout: default
+parent: Core Concepts
+nav_order: 5
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-# Paravisor: Secure Execution in Confidential Computing
 
 The paravisor is a specialized layer for confidential computing, designed to enable secure guest OS operations in a Confidential Virtual Machine (CVM) without reliance on the hypervisor. This makes it compatible with legacy and modern OS versions, allowing minimal modifications.
 

@@ -1,15 +1,9 @@
 ---
 title: Containers
-layout: default
+parent: Container Technologies
+nav_order: 1
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Containers
 ## Container Fundamentals
 A container is essentially a combination of Linux kernel features (namespaces, cgroups, chroot, and various security mechanisms) that allows processes to be isolated from one another. This isolation can be granular—you can choose which resources to isolate and which to share. Some key points:
 
@@ -157,4 +151,3 @@ Hyper-V Containers thus strike a balance between:
 - Confidential VMs are specifically focused on cryptographically securing data "in use" from even the underlying cloud/hardware host.  
 - A container can run inside a CVM for additional defense in depth, but that typically comes with extra performance overhead.
 
-<script src="{{ ‘/assets/js/dark-mode.js’ | relative_url }}"></script>

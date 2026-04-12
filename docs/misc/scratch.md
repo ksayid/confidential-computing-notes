@@ -1,14 +1,9 @@
 ---
 title: Reading List & Resources
-layout: default
+parent: Reference
+nav_order: 2
+search_exclude: true
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-# Reading List & Resources
 
 ## Videos & Talks
 
@@ -376,4 +371,3 @@ layout: default
 
 - [Confidential Computing Consortium Slack](https://confidentialcomputing.slack.com/join/shared_invite/zt-2cmxaufhc-xZZZWpDNhrxZeSIqyTbT8A)
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

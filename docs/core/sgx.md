@@ -1,13 +1,7 @@
 ---
 title: Intel SGX Overview and Remote Attestation
-layout: default
----
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
+parent: Core Concepts
+nav_order: 2
 ---
 
 ## 1. Introduction
@@ -215,4 +209,3 @@ An SGX enclave goes through well-defined stages from creation to teardown:
    * The enclave is destroyed, freeing EPC pages.
    * No residual secrets remain in unencrypted memory after teardown.
 
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

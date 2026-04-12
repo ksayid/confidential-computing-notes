@@ -1,15 +1,9 @@
 ---
 title: Confidential Computing Concepts
-layout: default
+parent: Core Concepts
+nav_order: 1
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Confidential Computing Concepts
 **Confidential computing** refers to technologies and practices that isolate and protect data during processing, preventing unauthorized access—even by the owner of the hardware or a **cloud service provider** (CSP). This is primarily achieved using **trusted execution environments** (TEEs) and associated security mechanisms such as attestation, secure boot, and robust key management.
 
 ## Goals
@@ -164,4 +158,3 @@ Even if the TCB itself is trustworthy, it must be attested (verified) by a party
 
 **Potential Conflict**: Relying on the CSP’s own attestation service can introduce a conflict of interest. Unless there is a legally separate business unit with its own governance, a single CSP acting as both the platform operator and the attestation authority can undermine the independence required for truly confidential workloads. Consequently, many enterprises prefer to use truly independent attestation—either run by themselves (first-party) or by a trusted, external third-party.
 
-<script src=”{{ ‘/assets/js/dark-mode.js’ | relative_url }}”></script>

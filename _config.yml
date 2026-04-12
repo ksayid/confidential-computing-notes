@@ -1,9 +1,26 @@
 title: Confidential Computing Notes
+description: A living notebook on trusted execution, secure containers, and cloud security.
 markdown: kramdown
 kramdown:
   input: GFM
-remote_theme: pages-themes/cayman@v0.2.0
+remote_theme: just-the-docs/just-the-docs
 plugins:
   - jekyll-remote-theme
 permalink: pretty
-custom_css: assets/css/style.css
+
+color_scheme: dark
+search_enabled: true
+back_to_top: true
+heading_anchors: true
+
+aux_links:
+  "GitHub":
+    - "https://github.com/ksayid/confidential-computing-notes"
+
+footer_content: "Confidential Computing Notes"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_repository: "https://github.com/ksayid/confidential-computing-notes"
+gh_edit_branch: "main"
+gh_edit_view_mode: "edit"

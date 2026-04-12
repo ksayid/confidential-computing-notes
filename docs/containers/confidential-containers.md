@@ -1,15 +1,8 @@
 ---
 title: Confidential Containers
-layout: default
+parent: Container Technologies
+nav_order: 3
 ---
-
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# Confidential Containers
 
 Confidential Containers extend familiar container workflows with hardware-based
 protection for data **in use**. Instead of running directly on a shared host
@@ -156,4 +149,3 @@ container manager and container shim running on the host are responsible for
 pulling images from the container registry, bringing up the UVM, and  
 orchestrating container execution, an agent running in the UVM (the guest agent)  
 coordinates the container workflow as directed by the host-side container shim.
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

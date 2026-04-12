@@ -1,16 +1,10 @@
 ---
 title: GRPC
-layout: default
+parent: Tools & Frameworks
+nav_order: 1
 ---
 
-[← Back to Main Page]({{ "/" | relative_url }})
-
-* TOC
-{:toc}
-
-
-# GRPC
-# Remote Procedure Calls (RPC)
+## Remote Procedure Calls (RPC)
 Remote Procedure Calls (RPC) let you write code that appears to call functions locally but actually runs those functions on remote machines. The RPC layer handles all the network messaging and data conversion so that you, the programmer, can pretend it’s all just a simple local function call.
 * HTTP is a higher-level application protocol primarily for request–response, often tied to web-based communication patterns.
 * RPC frameworks give you function-call semantics that can be more flexible than just sending HTTP requests.
@@ -32,4 +26,3 @@ The server registers itself (its methods, version, address, etc.) in a naming or
 Clients look up which server provides the method they need, then connect to it using IP/port details from the directory service.
 
 Lost messages can be handled by timeouts and retry logic in the underlying transport. If a client crashes after sending a request, the response that arrives at the client side is called an “orphan.” Various strategies (like “extermination,” “reincarnation,” etc.) can handle these stale replies.
-<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>
