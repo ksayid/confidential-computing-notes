@@ -331,7 +331,7 @@ search_exclude: true
 - <https://www.youtube.com/watch?v=Z29LFwbBYaA>
 - <https://www.youtube.com/watch?v=3Qjv7utnP-I>
 - <https://www.youtube.com/watch?v=_st-zWQsbSE>
-- [Fortifying AI Security in Kubernetes with Confidential Containers (CoCo)](https://www.youtube.com/watch?v=K6lGS17vsW0>)
+- [Fortifying AI Security in Kubernetes with Confidential Containers (CoCo)](https://www.youtube.com/watch?v=K6lGS17vsW0)
 - <https://www.youtube.com/watch?v=opfgCRoqjxg>
 - <https://www.youtube.com/watch?v=aEV_WGlKDO8>
 - <https://www.youtube.com/watch?v=-m-fKkSFJvg>
