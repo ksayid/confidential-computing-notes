@@ -1,7 +1,6 @@
 ---
-title: Scratch
+title: Reading List & Resources
 layout: default
-search_exclude: true
 ---
 
 [← Back to Main Page]({{ "/" | relative_url }})
@@ -9,514 +8,372 @@ search_exclude: true
 * TOC
 {:toc}
 
-### Unsorted Links
+# Reading List & Resources
 
-- <https://www.youtube.com/watch?v=30H4vzj125g>
-- <https://temporal.io/>
-- <https://arxiv.org/pdf/2505.03742v1>
-- <https://hazyresearch.stanford.edu/blog/2025-05-12-security>
-- <https://www.youtube.com/watch?v=5wdntWrHUws>
-- <https://www.youtube.com/watch?v=cTmZ1eCs08E>
-- <https://www.youtube.com/watch?v=5AW0rKV2hkY>
-- <https://www.youtube.com/watch?v=nYa-RrHYBK8>
-- <https://www.youtube.com/watch?v=jsBot6dtfD0>
-- <https://www.youtube.com/watch?v=vHcpDk2WsnM>
-- <https://www.youtube.com/watch?v=LyuKEk9LOFk>
-- <https://www.youtube.com/watch?v=3G3BNMTx3bE&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=27>
-- <https://www.youtube.com/watch?v=tZGjr2Kwpls&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=32>
-- <https://www.youtube.com/watch?v=QNX5JfV390c&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=38>
-- <https://www.youtube.com/watch?v=oPIiX6vyih8&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=52>
-- <https://www.youtube.com/watch?v=q9pYsss8huk&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=75>
-- <https://www.youtube.com/watch?v=UgzIwoxX7Wg&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=76>
-- <https://www.youtube.com/watch?v=r_SPWqB1l-c&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=77>
-- <https://www.youtube.com/playlist?list=PLBexUsYDijaz14Mot8_6rAbxkoF4iS6PZ>
-- <https://www.youtube.com/watch?v=KdIw9DzA1Uo&list=PLBexUsYDijawgCdEqEDBj3cUCovUS1MM5&index=29>
-- <https://www.youtube.com/watch?v=YIQi2geM5ys>
-- <https://phala.network/posts/GPU-TEEs-is-Alive-on-OpenRouter>
-- <https://arxiv.org/pdf/2504.21518>
-- <https://engineering.fb.com/2025/04/29/security/whatsapp-private-processing-ai-tools/>
-- <https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/azure-confidential-computing-vm-and-os-disk-encryption-through-hsm-backed-key-cm/4408926>
-- <https://arxiv.org/pdf/2503.14611v1>
-- <https://www.youtube.com/watch?v=OGEezPl9Ixk>
-- <https://www.youtube.com/watch?v=2Xyp8NkPLrg>
-- <https://www.youtube.com/watch?v=qX-m1HjiXJg>
-- <https://www.intelligentciso.com/2025/03/11/confidential-computing-the-key-to-ai-security/>
-- <https://www.youtube.com/watch?v=Ah5FGrmj81M>
-- <https://vanbulck.net/files/drads25-keynote.pdf>
-- <https://arxiv.org/abs/2503.08256>
-- <https://datatracker.ietf.org/meeting/122/materials/slides-122-hackathon-sessd-identity-crisis-for-attested-tls-in-confidential-computing-00>
-- <https://www.lfdecentralizedtrust.org/blog/lf-decentralized-trust-mentorship-spotlight-cc-tools-support-for-fabric-private-chaincode>
-- <https://medium.com/@wunderlichvalentin/the-end-of-just-trust-us-6141dbdaa07e>
-- <https://www.tenforums.com/tech-news/218632-amd-helping-secure-gpus-advance-ai.html>
-- <https://community.amd.com/t5/instinct-accelerators/helping-secure-gpus-that-advance-ai/ba-p/752288>
-- <https://www.youtube.com/watch?v=32K_v7hRgUQ>
-- <https://confidentialcomputing.io/2025/03/06/does-confidential-computing-work-with-containers/>
-- <https://diginova1.gumroad.com/l/gokyd>
-- <https://www.tealhq.com/job/software-engineer-iii-privacy-sandbox-android-on-device-personalization_1c946893-fd11-4141-9584-92a55e4c477d>
-- <https://arxiv.org/html/2502.11347v1>
-- <https://www.youtube.com/watch?v=MME6r3bqAtQ>
-- <https://blog.codepipes.com/testing/software-testing-antipatterns.html>
-- <https://aijobnetwork.com/jobs/openai-software-engineer-trusted-computing-and-cryptography>
-- <https://thomasvanlaere.com/>
-- <https://news.ycombinator.com/item?id=42570988>
-- <https://xeiaso.net/blog/2025/squandered-holy-grail/>
-- <https://www.bedlamresear.ch/posts/securing-tee-apps/#the-allure-of-tees>
-- <https://vanishinggradients.fireside.fm/40>
-- <https://github.com/Azure/azure-cleanroom/tree/main>
-- <https://arxiv.org/pdf/2011.02455>
-- <https://orbstack.dev/>
-- <https://blog.1password.com/confidential-computing/>
-- <https://www.youtube.com/watch?v=QxArt51VQKA>
-- <https://medium.com/ultraviolet-blog/cube-ai-privacy-preserving-llm-applications-with-confidential-computing-dcddfd28c614>
-- <https://www.usenix.org/system/files/conference/hotcloud16/hotcloud16_burns.pdf>
-- <https://oasisprotocol.org/blog/verifiable-ai-with-tees>
-- <https://arxiv.org/pdf/2412.03842>
-- <https://encloud.tech/faqs/>
-- <https://www.youtube.com/watch?v=E91z2YenrZM>
-- <https://www.youtube.com/watch?v=XssGI1q7Jak>
-- <https://arxiv.org/pdf/2412.01059>
-- <https://arxiv.org/html/2412.03842v3>
-- <https://www.youtube.com/watch?v=zc90pWZ7vj0>
-- <https://arxiv.org/html/2412.13163v1>
-- <https://www.ietf.org/id/draft-ietf-teep-usecase-for-cc-in-network-08.html>
-- <https://github.com/bpradipt/awesome-confidential-computing>
-- <https://github.com/openenclave/openenclave/issues/4845>
-- <https://insights.sei.cmu.edu/documents/4388/2021_017_001_739363.pdf>
-- <https://github.com/hysnsec/awesome-policy-as-code>
-- <https://www.dropbox.com/scl/fi/3typ46aqn6h7yo6s0war7/L3-Intro-to-Crypto-Digital-Sig.pdf?rlkey=oxl1m5sg7dwlsmew02dtih5bc&e=1&dl=0>
-- <https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/announcing-azure-confidential-vms-with-nvidia-h100-tensor-core-gpus-in-preview/3975389>
-- <https://arxiv.org/pdf/2403.10296>
-- <https://dzone.com/articles/aws-nitro-enclaves-enhances-security>
-- <https://dse.in.tum.de/wp-content/uploads/2024/11/sigmetrics25summer-CVM-Explained.pdf>
-- <https://www.youtube.com/watch?v=NT7EsZ6HRus>
-- <https://arxiv.org/html/2412.13163v2>
-- <https://systex22.github.io/papers/systex22-final79.pdf>
-- <https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/acrobat-17.pdf>
-- <https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/azure-ai-confidential-inferencing-technical-deep-dive/4253150>
-- <https://www.youtube.com/watch?v=53kf4LY5YdM>
-- <https://www.youtube.com/watch?v=jwYrTBbrOfk>
-- <https://www.reddit.com/r/apple/comments/1d3evub/apples_artificial_intelligence_servers_will_use/>
-- <https://play.google.com/books/reader?id=rqspEQAAQBAJ&pg=GBS.PT135.w.2.0.39.0.1_144&hl=en>
-- <https://confidentialcontainers.org/>
-- <https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-clean-rooms>
-- <https://www.youtube.com/watch?v=QNX5JfV390c&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=37>
-- <https://podcast.aiconfidential.com/>
-- <https://techcommunity.microsoft.com/category/azure/blog/azureconfidentialcomputingblog>
-- <https://hwang595.github.io/publications/>
-- <https://chungkim.io/>
-- <https://people.csail.mit.edu/mengyuanli/>
-- <https://books.google.com/books/about/Introduction_to_Confidential_Computing.html?id=rqspEQAAQBAJ>
-- <https://arxiv.org/html/2407.02960v2>
-- <https://www.youtube.com/playlist?list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu2YN>
-- <https://www.youtube.com/watch?v=_IAfiSdPuEs>
-- <https://www.youtube.com/watch?v=BgrQ16r84pM&list=PLBexUsYDijaz14Mot8_6rAbxkoF4iS6PZ&index=3>
-- <https://www.youtube.com/playlist?list=PLOspHqNVtKAC-_ZAGresP-i0okHe5FjcJ>
-- <https://www.youtube.com/watch?v=0ctat6RBrFo&list=PLOspHqNVtKACfjqfEwR3iKz1gJILKj5Tn&index=8>
-- <https://www.youtube.com/watch?v=pMHxLBJ6_UA&list=PLOspHqNVtKACfjqfEwR3iKz1gJILKj5Tn&index=24>
-- <https://www.youtube.com/playlist?list=PLOspHqNVtKADX-InvL3aRFYuOYvi-Qmep>
-- <https://www.youtube.com/watch?v=DqdVjEe5f6o>
-- <https://www.reddit.com/r/Proxmox/comments/1i940p0/what_is_the_point_of_amdsev/>
-- <https://www.youtube.com/watch?v=WpTUWaXWTQE>
-- <https://www.youtube.com/watch?v=SCHYdDaExrI>
-- <https://arxiv.org/pdf/2501.11558>
-- <https://www.nature.com/research-intelligence/trusted-execution-environments-and-security-architectures>
-- <https://research.google/blog/parfait-enabling-private-ai-with-research-tools/>
-- <https://www.youtube.com/watch?v=ytifTS9Lrn0>
-- <https://fosdem.org/2025/events/attachments/fosdem-2025-5002-confidential-computing-s-recent-past-emerging-present-and-long-lasting-future/slides/236697/Confident_fRySvCW.pdf>
-- <https://github.com/microsoft/hcsshim/pulls>
-- <https://github.com/microsoft/hcsshim/issues>
-- <https://github.com/microsoft/hcsshim/tree/main/pkg/securitypolicy>
-- <https://queue.acm.org/detail.cfm?id=3623460>
-- <https://queue.acm.org/detail.cfm?id=3623392>
-- <https://blog.mozilla.org/en/products/anonym-technology-overview/>
-- <https://dl.acm.org/doi/pdf/10.1145/3664293>
-- <https://arxiv.org/pdf/2302.03976>
-- <https://www.youtube.com/watch?v=i5zQ7q0cMbs>
-- <https://www.youtube.com/watch?v=69SVRuF_kjo>
-- <https://docs.enclaive.cloud/confidential-cloud/technology-in-depth/attestation-methods/raw-attestation>
-- <https://www.redhat.com/en/blog/confidential-computing-5-support-technologies-explore>
-- <https://www.youtube.com/watch?v=Eg8ngdNGBhE>
-- <https://www.reddit.com/r/rust/comments/1g5vkp3/openhcl_the_new_open_source_paravisor/>
+## Videos & Talks
 
-### Microsoft Projects
+- [Confidential Computing Overview](https://www.youtube.com/watch?v=YIQi2geM5ys)
+- [Confidential Computing with Containers](https://www.youtube.com/watch?v=OGEezPl9Ixk)
+- [Confidential VMs Explained](https://www.youtube.com/watch?v=2Xyp8NkPLrg)
+- [TEE Security Architecture](https://www.youtube.com/watch?v=qX-m1HjiXJg)
+- [Confidential Computing & AI](https://www.youtube.com/watch?v=Ah5FGrmj81M)
+- [AMD SEV & GPU Security](https://www.youtube.com/watch?v=32K_v7hRgUQ)
+- [Confidential Computing and Containers – CCC](https://www.youtube.com/watch?v=MME6r3bqAtQ)
+- [Confidential Computing Introduction](https://www.youtube.com/watch?v=53kf4LY5YdM)
+- [Intel SGX Deep Dive](https://www.youtube.com/watch?v=jwYrTBbrOfk)
+- [Azure Confidential Containers](https://www.youtube.com/watch?v=QNX5JfV390c&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=37)
+- [CCC Webinar Playlist](https://www.youtube.com/playlist?list=PLBexUsYDijaz14Mot8_6rAbxkoF4iS6PZ)
+- [IBM Confidential Computing Playlist](https://www.youtube.com/playlist?list=PLOspHqNVtKABAVX4azqPIu6UfsPzSu2YN)
+- [Confidential Computing Fundamentals](https://www.youtube.com/watch?v=_IAfiSdPuEs)
+- [CCC Webinar: Attestation](https://www.youtube.com/watch?v=BgrQ16r84pM&list=PLBexUsYDijaz14Mot8_6rAbxkoF4iS6PZ&index=3)
+- [IBM Security Playlist](https://www.youtube.com/playlist?list=PLOspHqNVtKAC-_ZAGresP-i0okHe5FjcJ)
+- [Kubernetes Security Talks](https://www.youtube.com/watch?v=0ctat6RBrFo&list=PLOspHqNVtKACfjqfEwR3iKz1gJILKj5Tn&index=8)
+- [Cloud Native Security Playlist](https://www.youtube.com/watch?v=pMHxLBJ6_UA&list=PLOspHqNVtKACfjqfEwR3iKz1gJILKj5Tn&index=24)
+- [Azure Confidential Computing Playlist](https://www.youtube.com/playlist?list=PLOspHqNVtKADX-InvL3aRFYuOYvi-Qmep)
+- [Kata Containers Overview](https://www.youtube.com/watch?v=DqdVjEe5f6o)
+- [AMD SEV Proxmox Discussion](https://www.youtube.com/watch?v=WpTUWaXWTQE)
+- [Confidential Computing Keynote](https://www.youtube.com/watch?v=SCHYdDaExrI)
+- [Intel TDX Explained](https://www.youtube.com/watch?v=ytifTS9Lrn0)
+- [Confidential Computing Talk](https://www.youtube.com/watch?v=E91z2YenrZM)
+- [SGX Application Development](https://www.youtube.com/watch?v=XssGI1q7Jak)
+- [Remote Attestation Walkthrough](https://www.youtube.com/watch?v=zc90pWZ7vj0)
+- [Confidential Computing Introduction](https://www.youtube.com/watch?v=NT7EsZ6HRus)
+- [TEE & Intel SGX Talk](https://www.youtube.com/watch?v=QxArt51VQKA)
+- [Confidential Computing Podcast Episode](https://vanishinggradients.fireside.fm/40)
+- [Confidential Computing with Azure](https://www.youtube.com/watch?v=-DG2rtx1geo)
+- [TEE Architecture Talk](https://www.youtube.com/watch?v=LjXGeGXe5ns)
+- [Confidential Computing Panel](https://www.youtube.com/watch?v=vaphMcn-_5Q)
+- [Making Data Better Podcast – Mike Bursell on CC](https://www.makingdatabetter.com/2195663/15033088-ep13-the-future-of-the-cloud-confidential-computing-with-mike-bursell)
+- [SGX Tutorial](https://www.youtube.com/watch?v=t1FEKALgucM)
+- [Confidential Containers Deep Dive](https://www.youtube.com/watch?v=rFXbW9ICLIk)
+- [TEE Isolation Talk](https://www.youtube.com/watch?v=nTVP6IvFlDY)
+- [CCC Live: Confidential Computing](https://www.youtube.com/live/7w9x8DU1Q4Q)
+- [Container Security Overview](https://www.youtube.com/watch?v=cpD7RGit-sk)
+- [Enclaves and Attestation](https://www.youtube.com/watch?v=EL8l7lFam3s)
+- [Confidential Containers Demo](https://www.youtube.com/watch?v=coiPO3ZEHoo)
+- [CC Playlist – General](https://www.youtube.com/playlist?list=PLyRlzZ0lHRWZ-_hQZcYhP_Invtz3m3Z9_)
+- [Honest Computing at Data for Policy 2024](https://www.youtube.com/watch?v=HdQbG9RHSTU)
+- [CoCo on Kubernetes](https://www.youtube.com/watch?v=K6lGS17vsW0)
+- [Fortifying AI Security in Kubernetes with CoCo](https://www.youtube.com/watch?v=opfgCRoqjxg)
+- [CC Infrastructure Talk](https://www.youtube.com/watch?v=lA18uO-JU9Q)
+- [Kata Containers Deep Dive](https://www.youtube.com/watch?v=a3HzBmPuw5g)
+- [CC & Containers Webinar](https://www.youtube.com/watch?v=qgcozT82w1w)
+- [Azure CC Technical Deep Dive](https://www.youtube.com/watch?v=E8GFTjMaXpU)
+- [Attestation Protocols](https://www.youtube.com/watch?v=gmcylzj1qTI)
+- [Remote Attestation Concepts](https://www.youtube.com/watch?v=-2YVuyhwUak)
+- [TEE Use Cases](https://www.youtube.com/watch?v=fHSTQYwsCr8)
+- [Confidential VMs Talk](https://www.youtube.com/watch?v=nZeRM0hqqPE&list=PLbzoR-pLrL6rbN7fu5TId8VWAC5A8v5O7&index=3)
+- [Kata 3.0 Overview](https://www.youtube.com/watch?v=PhAz3SpBZV0)
+- [CoCo Technical Overview](https://www.youtube.com/watch?v=uqFeCA-56pI)
+- [Confidential Computing Intro](https://www.youtube.com/watch?v=fY124uLvagI)
+- [SGX Security](https://www.youtube.com/watch?v=5RiqnIqaBT4)
+- [Sovereign Cloud & CC](https://www.youtube.com/watch?v=a-hd78NX36c)
+- [TEE Architecture Overview](https://www.youtube.com/watch?v=upYwrRtl99c)
+- [Azure CC Overview](https://www.youtube.com/watch?v=H9DP5CMqGac)
+- [Netflix Container Isolation](https://www.youtube.com/watch?v=siou2QOttk8)
+- [SGX Shield Presentation](https://www.youtube.com/watch?v=4otBPxF0kEw)
+- [Confidential Containers Walkthrough](https://www.youtube.com/watch?v=JpeWBKsAlI4)
+- [CC & AI Security](https://www.youtube.com/watch?v=YpGH6MvpTTA)
+- [Container Orchestration & CC](https://www.youtube.com/watch?v=2TQt2zj9G0U)
+- [Confidential Computing Use Cases](https://www.youtube.com/watch?v=tsxdCsMF_yI)
+- [TEE Deep Dive](https://www.youtube.com/watch?v=VdSY7lbnidI)
+- [CC Demo & Walkthrough](https://www.youtube.com/watch?v=wecZWIzSQEE)
+- [Enclave Development](https://www.youtube.com/watch?v=CcScwfJRb7k)
+- [CC Emerging Threats](https://www.youtube.com/watch?v=qNy8p03HqQo)
+- [Privacy & CC Talk](https://www.youtube.com/watch?v=qh-lSqifhj8)
+- [CC Research Talk](https://www.youtube.com/watch?v=-jHu5pOW-sw)
+- [Linux Plumbers: CC Session](https://lpc.events/event/18/sessions/194/#20240920)
+- [CC Infrastructure Demo](https://www.youtube.com/watch?v=CkiA5gxNkmM)
+- [Kubernetes CC Talk Series](https://www.youtube.com/watch?v=yaLoq5POv8Q&list=PLEhAl3D5WVvRm-U0mUK_Z7WLW_hbW9jdX&index=27)
+- [CC & Containers on Azure](https://www.youtube.com/watch?v=smukK1N49VE)
+- [Azure CC Technical Walkthrough](https://www.youtube.com/watch?v=LsqedhHe6DE)
+- [Intel TDX Security](https://www.youtube.com/watch?v=Z29LFwbBYaA)
+- [CC Live Session](https://www.youtube.com/watch?v=aEV_WGlKDO8)
+- [SGX Tutorial Talk](https://www.youtube.com/watch?v=-m-fKkSFJvg)
+- [CoCo Technical Discussion](https://www.youtube.com/watch?v=3Qjv7utnP-I)
+- [Enclave Development & Security](https://www.youtube.com/watch?v=_st-zWQsbSE)
+- [Illinois Mediaspace: CC Lecture 1](https://mediaspace.illinois.edu/media/t/1_eyk9ikvf)
+- [Illinois Mediaspace: CC Lecture 2](https://mediaspace.illinois.edu/media/t/1_43ylv2cp)
+- [Illinois Mediaspace: CC Lecture 3](https://mediaspace.illinois.edu/media/t/1_c8325aga)
+- [Azure Confidential Inferencing](https://www.youtube.com/watch?v=i5zQ7q0cMbs)
+- [CC Industry Overview](https://www.youtube.com/watch?v=69SVRuF_kjo)
+- [SEV-SNP Attestation](https://www.youtube.com/watch?v=Eg8ngdNGBhE)
+- [Enabling Private Gen AI (Google)](https://developers.googleblog.com/en/enabling-more-private-gen-ai/)
+- [CC Keynote Slides (FOSDEM 2025)](https://fosdem.org/2025/events/attachments/fosdem-2025-5002-confidential-computing-s-recent-past-emerging-present-and-long-lasting-future/slides/236697/Confident_fRySvCW.pdf)
+- [Skyflow Podcast: Confidential Computing & Enclaves](https://www.skyflow.com/podcast/confidential-computing-and-secure-enclaves-with-awss-arvind-raghu)
+- [AI Confidential Podcast](https://podcast.aiconfidential.com/?utm_source=aiconfidential.com&utm_medium=newsletter&utm_campaign=the-mathematical-case-for-trusted-ai-why-anthropic-is-all-in-on-confidential-computing)
+- [FOSDEM 2024: Linux on a Confidential VM](https://fosdem.org/2024/schedule/event/fosdem-2024-2394-linux-on-a-confidential-vm-in-a-cloud-where-s-the-challenge-/)
+- [FOSDEM 2024: Confidential Computing Track](https://fosdem.org/2024/schedule/track/confidential-computing/)
+- [KubeCon 2023: Confidentiality of K8s Control Planes](https://kccncna2023.sched.com/event/1R2sa/the-next-frontier-exploring-the-confidentiality-of-kubernetes-control-planes-jens-freimann-red-hat)
+- [SGX Side Channel Attacks Talk (Van Bulck)](https://vanbulck.net/files/drads25-keynote.pdf)
+- [CC Talk](https://www.youtube.com/watch?v=30H4vzj125g)
+- [CCC Webinar: CC Overview](https://www.youtube.com/watch?v=3G3BNMTx3bE&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=27)
+- [CC Security Talk](https://www.youtube.com/watch?v=5AW0rKV2hkY)
+- [CC Architecture Talk](https://www.youtube.com/watch?v=5wdntWrHUws)
+- [CC & TEE Talk](https://www.youtube.com/watch?v=cTmZ1eCs08E)
+- [CC Infrastructure Talk](https://www.youtube.com/watch?v=jsBot6dtfD0)
+- [CCC Webinar: Attestation Deep Dive](https://www.youtube.com/watch?v=KdIw9DzA1Uo&list=PLBexUsYDijawgCdEqEDBj3cUCovUS1MM5&index=29)
+- [CC Overview Talk](https://www.youtube.com/watch?v=LyuKEk9LOFk)
+- [CC & Containers Talk](https://www.youtube.com/watch?v=nYa-RrHYBK8)
+- [CCC Webinar: CC in Practice](https://www.youtube.com/watch?v=oPIiX6vyih8&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=52)
+- [CCC Webinar: TEE Security](https://www.youtube.com/watch?v=q9pYsss8huk&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=75)
+- [CCC Webinar: CC Future](https://www.youtube.com/watch?v=r_SPWqB1l-c&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=77)
+- [CCC Webinar: Attestation Protocols](https://www.youtube.com/watch?v=tZGjr2Kwpls&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=32)
+- [CCC Webinar: CC Standards](https://www.youtube.com/watch?v=UgzIwoxX7Wg&list=PLBexUsYDijaz09nH8BVPmPio_16V115i4&index=76)
+- [CC & Containers Discussion](https://www.youtube.com/watch?v=vHcpDk2WsnM)
+- [CC Talk (Extended)](https://www.youtube.com/watch?v=zmceGAj3CAw&t=4791s)
 
-- MCCF
-- MAA
-- HCSSHIM
-- OpenGCS
-- OpenHCL
-- THIM
-- Secure Key Release
-- Encrypted filesystem
-- Kata containers
-- OpenEnclave
-- Mystikos
-- Azure PCCS
+## Research Papers
 
-### Courses
+- [GPU TEEs for AI (Phala Network)](https://phala.network/posts/GPU-TEEs-is-Alive-on-OpenRouter)
+- [Confidential Computing Survey (2025)](https://arxiv.org/pdf/2504.21518)
+- [TEE-based Privacy Systems](https://arxiv.org/pdf/2503.14611v1)
+- [Attestation & TLS in Confidential Computing (IETF)](https://datatracker.ietf.org/meeting/122/materials/slides-122-hackathon-sessd-identity-crisis-for-attested-tls-in-confidential-computing-00)
+- [Confidential AI Security](https://arxiv.org/abs/2503.08256)
+- [CVM Benchmark Study](https://arxiv.org/html/2502.11347v1)
+- [Borg, Omega, and Kubernetes – Burns et al. (USENIX)](https://www.usenix.org/system/files/conference/hotcloud16/hotcloud16_burns.pdf)
+- [Verifiable AI with TEEs (Oasis Protocol)](https://oasisprotocol.org/blog/verifiable-ai-with-tees)
+- [TEE Security Analysis](https://arxiv.org/pdf/2412.03842)
+- [CC Threat Models](https://arxiv.org/pdf/2412.01059)
+- [TEE Architecture Survey](https://arxiv.org/html/2412.03842v3)
+- [Confidential Computing for Networking (IETF)](https://www.ietf.org/id/draft-ietf-teep-usecase-for-cc-in-network-08.html)
+- [CC Performance Overhead](https://arxiv.org/html/2412.13163v1)
+- [SEI/CMU: CC Architecture Report](https://insights.sei.cmu.edu/documents/4388/2021_017_001_739363.pdf)
+- [Azure Confidential VMs with NVIDIA H100](https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/announcing-azure-confidential-vms-with-nvidia-h100-tensor-core-gpus-in-preview/3975389)
+- [CC for Multi-party ML](https://arxiv.org/pdf/2403.10296)
+- [AWS Nitro Enclaves Overview](https://dzone.com/articles/aws-nitro-enclaves-enhances-security)
+- [CVM Explained (TU Munich)](https://dse.in.tum.de/wp-content/uploads/2024/11/sigmetrics25summer-CVM-Explained.pdf)
+- [SysTEX 2022: TEE Systems](https://systex22.github.io/papers/systex22-final79.pdf)
+- [Microsoft Research: Haven (Shielding Applications)](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/acrobat-17.pdf)
+- [Azure AI Confidential Inferencing Deep Dive](https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/azure-ai-confidential-inferencing-technical-deep-dive/4253150)
+- [CC Performance in VMs](https://arxiv.org/html/2412.13163v2)
+- [Confidential Computing Overview (ACM Queue)](https://queue.acm.org/detail.cfm?id=3623460)
+- [ACM Queue: CC Architecture](https://queue.acm.org/detail.cfm?id=3623392)
+- [Confidential Computing Survey (ACM)](https://dl.acm.org/doi/pdf/10.1145/3664293)
+- [TEE Supply Chain Security](https://arxiv.org/pdf/2302.03976)
+- [TEE-101 White Paper (Secure Technology Alliance)](https://www.securetechalliance.org/wp-content/uploads/TEE-101-White-Paper-FINAL2-April-2018.pdf)
+- [Trustworthy AI using Confidential Federated Learning (CACM)](https://cacm.acm.org/practice/trustworthy-ai-using-confidential-federated-learning/)
+- [DeepAttest: Attestation of Deep Neural Networks (ISCA)](https://cseweb.ucsd.edu/~jzhao/files/DeepAttest-isca2019.pdf)
+- [IoT TEE Security](https://www.cis.upenn.edu/~linhphan/papers/iotdi18-nguyen.pdf)
+- [CC Systems Survey (ACM)](https://dl.acm.org/doi/10.1145/3686261)
+- [SGX Security Analysis](https://arxiv.org/html/2305.18639v3)
+- [IEEE: TEE Architecture](https://ieeexplore.ieee.org/document/10646767)
+- [ML in Secure Enclaves](https://arxiv.org/pdf/2406.01186)
+- [TEE Side Channels](https://arxiv.org/html/2405.11988v2)
+- [Ahoi Attacks (Side Channel)](https://gangw.cs.illinois.edu/class/cs463/)
+- [TEE Container Security (ACM)](https://dl.acm.org/doi/10.1145/3689949)
+- [LATTE: TEE Attestation Framework](https://pages.cs.wisc.edu/~yanzhai/latte.pdf)
+- [CC Systems Design (ACM)](https://dl.acm.org/doi/pdf/10.1145/3665220)
+- [SGX Security Dissertation (U Michigan)](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/155139/oweisse_1.pdf)
+- [TEE for ML Privacy](https://arxiv.org/pdf/2310.11559)
+- [Hardware TEE for Containers](https://cse.buffalo.edu/faculty/tkosar/cse710_spring19/bhardwaj-sec16.pdf)
+- [Ohio State: TEE Dissertation](https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1554949268465917&disposition=inline)
+- [TEE Attack Surfaces](https://arxiv.org/pdf/2410.13752)
+- [IEEE: SGX Performance](https://ieeexplore.ieee.org/document/10410349)
+- [WPI: CC Thesis](https://digital.wpi.edu/pdfviewer/db78tg16v)
+- [SDN/NFV Security for CC](https://nsr.colorado.edu/coughlin/doc/sdnnfvsec2017.pdf)
+- [TEE Deployment Challenges](https://arxiv.org/html/2410.15240v1)
+- [Biorxiv: Secure Bioinformatics](https://www.biorxiv.org/content/10.1101/2024.04.24.590989v1.full.pdf)
+- [CC Privacy-Preserving AI](https://arxiv.org/pdf/2409.03720)
+- [SGX Lingo & Concepts](https://phlip9.com/notes/confidential%20computing/intel%20SGX/SGX%20lingo/)
+- [SGX Getting Started Guide](https://aaronbedra.com/post/sgx_getting_started/)
+- [Haven: Shielding Applications (Slides)](https://tc.gtisc.gatech.edu/bss/2014/r/haven-slides.pdf)
+- [Core Slicing: CVM Isolation (USENIX)](https://www.youtube.com/watch?v=lA18uO-JU9Q)
+- [SGX Malware Analysis](https://csis.gmu.edu/ksun/publications/asiaccs21_sgxmalware.pdf)
+- [CoCo: From Sandboxed to Confidential Containers](https://pradiptabanerjee.medium.com/from-sandboxed-containers-to-confidential-containers-enabling-cloud-native-confidential-computing-35936fad5998)
+- [Fritz Alder: TEE Publications](https://www.youtube.com/watch?v=siou2QOttk8)
+- [SGX Intro Lecture (UConn)](https://scl.engr.uconn.edu/courses/ece4451/Lec3bSGXintro.pdf)
+- [Hecate: Lifting On-Premises to Untrusted Cloud (Microsoft Research)](https://www.microsoft.com/en-us/research/publication/hecate-lifting-and-shifting-on-premises-workloads-to-an-untrusted-cloud/)
+- [Kata Containers History (Oracle)](https://blogs.oracle.com/linux/post/kata-containers-what-when-and-how)
+- [vSGX: Virtualizing SGX on AMD SEV](https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/0/113190/files/2022/03/vSGX-Virtualizing-SGX-Enclaves-on-AMD-SEV.pdf)
+- [Chain of Trust for Multi-Clouds with SGX](https://www.academia.edu/82233581/Towards_Management_of_Chains_of_Trust_for_Multi_Clouds_with_Intel_SGX)
+- [EnclaveDB (Microsoft Research)](https://www.microsoft.com/en-us/research/uploads/prod/2018/02/enclavedb.pdf)
+- [CCF: Confidential Verifiable Replicated Services (Microsoft)](https://www.microsoft.com/en-us/research/publication/ccf-a-framework-for-building-confidential-verifiable-replicated-services/)
+- [CC within AI Accelerators (Microsoft)](https://www.microsoft.com/en-us/research/uploads/prod/2023/05/Confidential-Computing-within-AI-Accelerators.pdf)
+- [SGX VB Architecture (Northeastern)](https://www.khoury.northeastern.edu/home/amirali/publications/SGX_VB_2016.pdf)
+- [TEE Storage Security](https://arxiv.org/pdf/2408.11601)
+- [CC Threat Model Analysis](https://arxiv.org/html/2402.11438v3)
+- [Graphene-SGX: Library OS for SGX](https://www.cs.unc.edu/~porter/pubs/graphene-sgx.pdf)
+- [AOT Preparation for TEEs](https://people.cs.vt.edu/djwillia/papers/hotstorage19-aot_prep.pdf)
+- [TEE Design Patterns](https://export.arxiv.org/ftp/arxiv/papers/1801/1801.05863.pdf)
+- [TEE Consistency (ICDCS)](https://pages.cs.wisc.edu/~vg/papers/icdcs2017/icdcs2017.pdf)
+- [HASP 2018: TEE Slides](https://caslab.csl.yale.edu/workshops/hasp2018/HASP18_a9-mofrad_slides.pdf)
+- [TEE Storage Solutions (Utah)](https://users.cs.utah.edu/~vijay/papers/atc21.pdf)
+- [Trust No One: CC for Containers](https://hackdojo.io/presentations/XYPONZ4L6/trust-no-one-bringing-confidential-computing-to-containers)
+- [Rokwire: Secure Systems at Illinois](https://rokwire.illinois.edu/wp-content/uploads/2021/11/Safer_Illinois_Rokwall.pdf)
+- [Foreshadow Attack (UW)](https://homes.cs.washington.edu/~baris/public/foreshadow-toppick.pdf)
+- [SGX Shield](https://gts3.org/assets/papers/2017/seo:sgx-shield.pdf)
+- [CC Data Sharing (ACM)](https://dl.acm.org/doi/abs/10.1145/3590140.3629124)
+- [Cornell: SGX for Untrusted OS](https://www.cs.cornell.edu/fbs/publications/UBP.SGX.pdf)
+- [Enclave Storage (Utah)](https://users.cs.utah.edu/~lifeifei/papers/enclavestorage-vldb21-talk.pdf)
+- [Berkeley: CC Systems Report](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-96.pdf)
+- [Intel TDX Security & Side Channels](https://collective.flashbots.net/t/intel-tdx-security-and-side-channels/3648)
+- [CC Trusted Systems (ACM)](https://dl.acm.org/doi/10.1145/3652597)
+- [Predictive CPU Isolation at Netflix](https://netflixtechblog.com/predictive-cpu-isolation-of-containers-at-netflix-91f014d856c7)
+- [Merkle Trees (Brilliant)](https://brilliant.org/wiki/merkle-tree/)
+- [NIST: CC Guidelines](https://www.nist.gov/system/files/documents/2024/06/11/02-OzgaGHSPLD.pdf)
+- [SoK: TEE Design Choices](https://arxiv.org/pdf/2407.02960)
+- [TRUCE: Private Benchmarking for LLMs](https://arxiv.org/html/2407.02960v2)
+- [CC for EDA in Public Clouds](https://dl.acm.org/doi/pdf/10.1145/3662010.3663440)
+- [SGX Architecture (UConn)](https://scl.engr.uconn.edu/courses/ece6095/lectures/sgx_architecture.pdf)
+- [OpenSGX Tutorial Slides](https://taesoo.kim/pubs/2016/jain:opensgx-slides.pdf)
+- [Memory Protection for AI/ML Inferencing (Azure)](https://techcommunity.microsoft.com/t5/azure-confidential-computing/memory-protection-for-ai-ml-model-inferencing/ba-p/4119105)
+- [NVIDIA H100 CC Research Note](https://nand-research.com/research-note-nvidia-h100-confidential-computing/)
+- [Edgeless Systems: CC Whitepaper](https://content.edgeless.systems/hubfs/Confidential%20Computing%20Whitepaper.pdf)
+- [Wright State: TEE Dissertation](https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=wright1588637637290094&disposition=inline)
+- [Private AI Tools (Google Research)](https://research.google/blog/parfait-enabling-private-ai-with-research-tools/)
+- [CC & Privacy-Preserving AI](https://arxiv.org/html/2408.00443v1)
+- [CC Security Analysis](https://arxiv.org/pdf/2410.05930)
+- [Container Network Security (Southern)](https://computing.southern.edu/jbeckett/cpte433w24/TopicPapers/Virtualization/954951_Container_Network_Security_FD_NEW.pdf)
+- [Secure Compute MOSE (USF)](https://cse.usf.edu/~attilaayavuz/article/20/CODASPY20_MOSE.pdf)
+- [dm-verity (Android)](https://source.android.com/security/verifiedboot/dm-verity)
+- [Confidential Computing Systems (2020)](https://arxiv.org/pdf/2011.02455)
+- [TEE Side Channel Attacks (2022)](https://arxiv.org/pdf/2205.05747.pdf)
+- [CC Security Analysis (2025)](https://arxiv.org/pdf/2501.11558)
+- [AI Security Architecture (Stanford)](https://hazyresearch.stanford.edu/blog/2025-05-12-security)
+- [CC Research Paper (2025)](https://arxiv.org/pdf/2505.03742v1)
+- [SGX Security Dissertation (U Michigan, alt)](https://deepblue.lib.umich.edu/bitstream/handle/2027.42/155139/oweisse_1.pdf?sequence=1)
+- [TEE Attack Analysis](https://arxiv.org/html/2402.11438v2)
+- [TEE Attack Surfaces (alt)](https://arxiv.org/html/2410.13752v1)
+- [SGX Architecture Lecture (UConn)](https://scl.engr.uconn.edu/courses/ece4451/lectures/sgx_architecture.pdf)
 
-- <https://css.csail.mit.edu/6.858/2024/>
-- <https://scl.engr.uconn.edu/courses/ece4451/>
-- <https://sites.duke.edu/compsci590_03_s2021/>
-- <https://github.com/mr-nsin/references/blob/master/Docker%20Deep%20Dive%20by%20Nigel%20Poulton.pdf>
-- <https://courses.engr.illinois.edu/cs423/sp2021/>
-- <https://web.njit.edu/~crix/publications/now-ftps22.pdf>
-- <https://lass.cs.umass.edu/~shenoy/courses/677content/notes/spring23/>
-- <https://cs.brown.edu/courses/csci2390/2020/>
-- <https://pages.cs.wisc.edu/~remzi/OSTEP/>
-- <https://www.cs.umb.edu/cs634/class19.pdf>
-- <https://searchworks.stanford.edu/view/14169178>
-- <https://github.com/vijay03/cs360v-f21/tree/main/notes>
-- CS 4501 - Stephen Herwig
-- <https://systems.cs.columbia.edu/private-systems-class/lectures/>
-- <https://courses.cs.duke.edu/spring15/compsci510/>
-- CSCI 780 Spring 2023
-- <https://web.stanford.edu/~ouster/cs190-winter23/all_lectures/>
-- COS 316: Principles of Computer System Design
-- <https://www.cs.colostate.edu/~cs370/Fall21/lectures/>
-- A Philosophy of Software Design
-- <https://sp24.cs161.org/>
-- <https://zzm7000.github.io/>
-- <https://www.cylab.cmu.edu/education/courses.html>
-- <https://x.com/not_salgaonkar/status/1805245804765999288>
+## Blog Posts & Articles
 
-### Engineering
+- [WhatsApp Private Processing (Meta)](https://engineering.fb.com/2025/04/29/security/whatsapp-private-processing-ai-tools/)
+- [Azure CC VM & Disk Encryption via HSM](https://techcommunity.microsoft.com/blog/azureconfidentialcomputingblog/azure-confidential-computing-vm-and-os-disk-encryption-through-hsm-backed-key-cm/4408926)
+- [Confidential Computing: The Key to AI Security](https://www.intelligentciso.com/2025/03/11/confidential-computing-the-key-to-ai-security/)
+- [The End of "Just Trust Us"](https://medium.com/@wunderlichvalentin/the-end-of-just-trust-us-6141dbdaa07e)
+- [AMD Helping Secure GPUs for AI](https://community.amd.com/t5/instinct-accelerators/helping-secure-gpus-that-advance-ai/ba-p/752288)
+- [Does Confidential Computing Work with Containers? (CCC)](https://confidentialcomputing.io/2025/03/06/does-confidential-computing-work-with-containers/)
+- [The Squandered Holy Grail (Xe Iaso)](https://xeiaso.net/blog/2025/squandered-holy-grail/)
+- [Securing TEE Apps (Bedlam Research)](https://www.bedlamresear.ch/posts/securing-tee-apps/)
+- [1Password: What is Confidential Computing?](https://blog.1password.com/confidential-computing/)
+- [Cube AI: Privacy-Preserving LLMs with CC](https://medium.com/ultraviolet-blog/cube-ai-privacy-preserving-llm-applications-with-confidential-computing-dcddfd28c614)
+- [Intel TDX Design Flaws (x86.lol)](https://x86.lol/generic/2023/06/28/intel-tdx-2.html)
+- [Azure CC Knowledge Junction Overview](https://knowledge-junction.in/2022/09/28/azure-confidential-computing-part-1/)
+- [Building Trust into OS Images for CC (Red Hat/Microsoft)](https://techcommunity.microsoft.com/t5/linux-and-open-source-blog/building-trust-into-os-images-for-confidential-containers/ba-p/4096232)
+- [Aligning with Kata CC for Zero Trust (Azure)](https://techcommunity.microsoft.com/t5/azure-confidential-computing/aligning-with-kata-confidential-containers-to-achieve-zero-trust/ba-p/3797876)
+- [OpenAI: Reimagining Secure Infrastructure for Advanced AI](https://openai.com/index/openai-safety-update/)
+- [Scientists Find Cloud Server Vulnerability](https://techxplore.com/news/2024-05-scientists-vulnerability-cloud-server-hardware.html)
+- [Encloud FAQ](https://encloud.tech/faqs/)
+- [Deep Dive: Secure Orchestration of CC on Azure](https://techcommunity.microsoft.com/t5/linux-and-open-source-blog/deep-dive-secure-orchestration-of-confidential-containers-on/ba-p/4137179)
+- [Confidential Computing Blog (Azure)](https://techcommunity.microsoft.com/category/azure/blog/azureconfidentialcomputingblog)
+- [Mozilla Anonym Technology Overview](https://blog.mozilla.org/en/products/anonym-technology-overview/)
+- [OpenHCL: Microsoft's Open-Source Paravisor (InfoWorld)](https://www.infoworld.com/article/3595531/openhcl-understanding-microsofts-open-source-paravisor.html)
+- [OpenHCL Discussion (r/rust)](https://www.reddit.com/r/rust/comments/1g5vkp3/openhcl_the_new_open_source_paravisor/)
+- [Red Hat: 5 CC Support Technologies](https://www.redhat.com/en/blog/confidential-computing-5-support-technologies-explore)
+- [Red Hat: Confidential Containers on Azure OpenShift](https://www.redhat.com/en/blog/confidential-containers-azure-openshift-technical-deep-dive)
+- [Red Hat: Introducing Confidential Containers Trustee](https://www.redhat.com/en/blog/introducing-confidential-containers-trustee-attestation-services-solution-overview-and-use-cases)
+- [How Confidential Containers Retrieve Secrets (ITNext)](https://itnext.io/how-your-confidential-containers-can-securely-retrieve-secrets-93d6f55b7b42)
+- [Azure Secure Key Release – Part 1 (Van Laere)](https://thomasvanlaere.com/posts/2022/12/azure-confidential-computing-secure-key-release/)
+- [Azure Secure Key Release – Part 2 (Van Laere)](https://thomasvanlaere.com/posts/2023/10/azure-confidential-computing-secure-key-release-part-2/)
+- [Azure CoCo Overview (Van Laere)](https://thomasvanlaere.com/posts/2024/03/azure-confidential-computing-coco-confidential-containers/)
+- [State of Confidential Containers (Parisel)](https://www.linkedin.com/pulse/state-confidential-containers-opinionated-christophe-parisel-oqume/)
+- [Confidential Computing on Azure with K8s (The New Stack)](https://thenewstack.io/confidential-compute-on-azure-with-kubernetes/)
+- [Kata Containers on AKS (Azure Aggregator)](https://azureaggregator.wordpress.com/2023/02/24/preview-support-for-kata-vm-isolated-containers-on-aks-for-pod-sandboxing/)
+- [Alibaba Cloud: Kata 3.0](https://www.alibabacloud.com/blog/kata-3-0-is-coming-start-experiencing-the-out-of-the-box-secure-container_599575)
+- [Kata Containers 3.0 Release](https://www.prweb.com/releases/kata_containers_version_3_0_0_arrives_faster_more_secure_support_for_new_environments/prweb18947394.htm)
+- [Red Hat Supports CNCF Confidential Containers](https://www.techzine.eu/news/devops/91135/red-hat-supports-cncf-container-project-confidential-containers/)
+- [Attestation Methods: Raw Attestation (Enclaive)](https://docs.enclaive.cloud/confidential-cloud/technology-in-depth/attestation-methods/raw-attestation)
+- [Nature: TEEs and Security Architectures](https://www.nature.com/research-intelligence/trusted-execution-environments-and-security-architectures)
+- [Secure AI with CC (Knowledia)](https://news.knowledia.com/US/en/articles/unlocking-secure-private-ai-with-confidential-computing-463983301e30d52fbd960d1ba3b2072754310a6b)
+- [Hacker News: CC Discussion](https://news.ycombinator.com/item?id=42570988)
+- [AMD SEV Discussion (r/Proxmox)](https://www.reddit.com/r/Proxmox/comments/1i940p0/what_is_the_point_of_amdsev/)
+- [Apple Secure Enclaves for AI (r/apple)](https://www.reddit.com/r/apple/comments/1d3evub/apples_artificial_intelligence_servers_will_use/)
+- [Unlocking Secure Private AI](https://news.knowledia.com/US/en/articles/unlocking-secure-private-ai-with-confidential-computing-463983301e30d52fbd960d1ba3b2072754310a6b)
+- [Software Testing Antipatterns](https://blog.codepipes.com/testing/software-testing-antipatterns.html)
+- [AMD Helping Secure GPUs (TenForums)](https://www.tenforums.com/tech-news/218632-amd-helping-secure-gpus-advance-ai.html)
+- [Azure Pipeline Agents with Entra (Van Laere)](https://thomasvanlaere.com/posts/2024/06/register-azure-pipeline-agents-using-entra-workload-id-on-azure-kubernetes-service/)
+- [AI Confidential Podcast](https://podcast.aiconfidential.com/)
+- [Intro to Crypto & Digital Signatures (Dropbox)](https://www.dropbox.com/scl/fi/3typ46aqn6h7yo6s0war7/L3-Intro-to-Crypto-Digital-Sig.pdf?rlkey=oxl1m5sg7dwlsmew02dtih5bc&e=1&dl=0)
+- [Stanford: CC Reference](https://searchworks.stanford.edu/view/14169178)
 
-- [The Flawed Design of Intel TDX](https://x86.lol/generic/2023/06/28/intel-tdx-2.html)
-- <https://knowledge-junction.in/2022/09/28/azure-confidential-computing-part-1/>
-- <https://learn.microsoft.com/en-us/azure/well-architected/security/encryption>
-- <https://learn.microsoft.com/en-us/azure/security/fundamentals/trusted-hardware-identity-management>
-- <https://techcommunity.microsoft.com/t5/linux-and-open-source-blog/building-trust-into-os-images-for-confidential-containers/ba-p/4096232>
-- <https://www.youtube.com/watch?v=zmceGAj3CAw&t=4791s>
-- <https://jcs.ep.jhu.edu/ejava-springboot/coursedocs/content/pdf/docker-notes.pdf>
+## Tools & Repositories
 
-#### Search Queries
+- [Azure Clean Room](https://github.com/Azure/azure-cleanroom/tree/main)
+- [OrbStack (Container Dev Environment)](https://orbstack.dev/)
+- [Awesome Confidential Computing](https://github.com/bpradipt/awesome-confidential-computing)
+- [Open Enclave Issue Tracker](https://github.com/openenclave/openenclave/issues/4845)
+- [Awesome Policy as Code](https://github.com/hysnsec/awesome-policy-as-code)
+- [LF Decentralized Trust: CC Tools for Fabric](https://www.lfdecentralizedtrust.org/blog/lf-decentralized-trust-mentorship-spotlight-cc-tools-support-for-fabric-private-chaincode)
+- [Microsoft HCSSHIM](https://github.com/microsoft/hcsshim/tree/main)
+- [HCSSHIM Security Policy](https://github.com/microsoft/hcsshim/tree/main/pkg/securitypolicy)
+- [Confidential Containers Project](https://confidentialcontainers.org/)
+- [CoCo Acronyms Wiki](https://github.com/confidential-containers/documentation/wiki/Acronyms)
+- [CoCo Glossary](https://github.com/confidential-containers/documentation/wiki/Glossary)
+- [Container Integrity Measurement Agent](https://github.com/cc-api/container-integrity-measurement-agent/tree/main)
+- [Gramine (Library OS for SGX)](https://github.com/gramineproject/gramine)
+- [Mystikos (Microsoft TEE SDK)](https://github.com/deislabs/mystikos/)
+- [Full Disk Encryption for CC](https://github.com/cc-api/full-disk-encryption)
+- [Confidential Cluster](https://github.com/cc-api/confidential-cluster)
+- [IBM Cloud Confidential Computing Docs](https://github.com/ibm-cloud-docs/confidential-computing)
+- [Merkle Tree (Wikipedia)](https://en.wikipedia.org/wiki/Merkle_tree)
+- [CCC Blog](https://confidentialcomputing.io/resources/ccc-blog/)
+- [CCC Slack](https://confidentialcomputing.slack.com/join/shared_invite/zt-2cmxaufhc-xZZZWpDNhrxZeSIqyTbT8A)
+- [NVIDIA GPU Operator for Confidential Containers](https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/23.6.1/gpu-operator-confidential-containers.html)
+- [Sovereign Cloud](https://sovereign-cloud.nl/)
+- [Temporal (Workflow Orchestration)](https://temporal.io/)
+- [HCSSHIM Issues](https://github.com/microsoft/hcsshim/issues)
+- [HCSSHIM PRs](https://github.com/microsoft/hcsshim/pulls)
+- [HCSSHIM Internal Guest](https://github.com/microsoft/hcsshim/tree/master/internal/guest)
+- [gRPC Introduction](https://grpc.io/docs/what-is-grpc/introduction/)
+- [Red Hat Defensive Coding Guide: TLS](https://redhat-crypto.gitlab.io/defensive-coding-guide/#chap-Defensive_Coding-TLS)
+- [FOSDEM 2024 Schedule](https://fosdem.org/2024/schedule/)
+- [Introduction to CC (Google Play)](https://play.google.com/books/reader?id=rqspEQAAQBAJ&pg=GBS.PT135.w.2.0.39.0.1_144&hl=en)
 
-- small TCB confidential microsoft
-- "Intel" "SGX plugin" ("/dev/sgx/enclave")
-- "Intel" "TDX" phd site:.edu
-- namespace containers
-- attestation security
-- "attestation" "authorization" "confidential" "TEE"
-- "L1" "L2" "virtualization"
-- "grpc" site:.edu <https://grpc.io/docs/what-is-grpc/introduction/>
+## Books & Courses
 
-### News
+- [Introduction to Confidential Computing (Google Books)](https://books.google.com/books/about/Introduction_to_Confidential_Computing.html?id=rqspEQAAQBAJ)
+- [Diginova: CC Guide (Gumroad)](https://diginova1.gumroad.com/l/gokyd)
+- [MIT 6.858: Computer Systems Security](https://css.csail.mit.edu/6.858/2024/)
+- [UConn ECE 4451: Hardware Security](https://scl.engr.uconn.edu/courses/ece4451/)
+- [Duke CompSci 590: Secure Systems](https://sites.duke.edu/compsci590_03_s2021/)
+- [Docker Deep Dive (Nigel Poulton)](https://github.com/mr-nsin/references/blob/master/Docker%20Deep%20Dive%20by%20Nigel%20Poulton.pdf)
+- [UIUC CS 423: Operating Systems](https://courses.engr.illinois.edu/cs423/sp2021/)
+- [Web & Network Security (NJIT)](https://web.njit.edu/~crix/publications/now-ftps22.pdf)
+- [UMass CS 677: Distributed Systems](https://lass.cs.umass.edu/~shenoy/courses/677content/notes/spring23/)
+- [Brown CS 2390: Privacy-Aware Systems](https://cs.brown.edu/courses/csci2390/2020/)
+- [OSTEP: Operating Systems in Three Easy Pieces](https://pages.cs.wisc.edu/~remzi/OSTEP/)
+- [UMB CS 634: Operating Systems Lecture](https://www.cs.umb.edu/cs634/class19.pdf)
+- [UT Austin CS 360V: Virtualization](https://github.com/vijay03/cs360v-f21/tree/main/notes)
+- [Columbia: Private Systems Class](https://systems.cs.columbia.edu/private-systems-class/lectures/)
+- [Duke CompSci 510: Secure Systems](https://courses.cs.duke.edu/spring15/compsci510/)
+- [Stanford CS 190: Software Design](https://web.stanford.edu/~ouster/cs190-winter23/all_lectures/)
+- [Princeton COS 316: Computer System Design](https://www.cs.princeton.edu/)
+- [Colorado State CS 370: Operating Systems](https://www.cs.colostate.edu/~cs370/Fall21/lectures/)
+- [A Philosophy of Software Design (Book)](https://web.stanford.edu/~ouster/cs190-winter23/all_lectures/)
+- [UC Berkeley CS 161: Computer Security](https://sp24.cs161.org/)
+- [CMU CyLab: Security Courses](https://www.cylab.cmu.edu/education/courses.html)
+- [UIUC Virtualization Lectures (CS 423)](https://courses.engr.illinois.edu/cs423/sp2016/lectures/VirtOS.pdf)
+- [CloudYuga: CC Hands-on Lab](https://cloudyuga.guru/hands_on_lab/confidential-containers)
+- [Docker Notes (JHU)](https://jcs.ep.jhu.edu/ejava-springboot/coursedocs/content/pdf/docker-notes.pdf)
+- [UConn: Sanctum Lecture](https://scl.engr.uconn.edu/courses/ece4451/Lec7aSanctum.pdf)
+- [Penn State: Trusted Computing Slides](https://www.cse.psu.edu/~trj1/cse544-s18/slides/cse544-tc.pdf)
+- [NYU: TEE Lecture Notes](https://cs.nyu.edu/~mwalfish/classes/16sp/classnotes/l15.txt)
+- [KSU: System Monitoring Lab](https://textbooks.cs.ksu.edu/cis527/7-backups-monitoring-devops/07-ubuntu-monitoring/index.html)
+- [Kubernetes Basics (kubernetes.io)](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
+- [Kubernetes for the Absolute Beginners (Udemy)](https://www.udemy.com/)
 
-- [Reimagining secure infrastructure for advanced AI - OpenAI](https://openai.com/index/openai-safety-update/)
-- <https://confidentialcomputing.slack.com/join/shared_invite/zt-2cmxaufhc-xZZZWpDNhrxZeSIqyTbT8A#/shared-invite/email>
-- <https://techxplore.com/news/2024-05-scientists-vulnerability-cloud-server-hardware.html>
+## Vendor & Product Resources
 
-### Research Papers
+- [Azure Confidential Computing: Clean Rooms](https://learn.microsoft.com/en-us/azure/confidential-computing/confidential-clean-rooms)
+- [Azure Well-Architected: Encryption](https://learn.microsoft.com/en-us/azure/well-architected/security/encryption)
+- [Azure Trusted Hardware Identity Management](https://learn.microsoft.com/en-us/azure/security/fundamentals/trusted-hardware-identity-management)
+- [Hyper-V Nested Virtualization](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/nested-virtualization)
+- [Azure Open Source Architecture Scenarios](https://docs.microsoft.com/en-us/azure/architecture/guide/open-source-scenarios)
+- [Cell Patterns: Secure Computing in Biology](https://www.cell.com/patterns/pdf/S2666-3899(24)00082-5.pdf)
 
-- <https://ieeexplore.ieee.org/document/10646767>
-- <https://arxiv.org/pdf/2406.01186>
-- <https://arxiv.org/html/2405.11988v2>
-- Ahoi Attacks
-- <https://gangw.cs.illinois.edu/class/cs463/>
-- <https://dl.acm.org/doi/10.1145/3689949>
-- <https://pages.cs.wisc.edu/~yanzhai/latte.pdf>
-- <https://dl.acm.org/doi/pdf/10.1145/3665220>
-- <https://deepblue.lib.umich.edu/bitstream/handle/2027.42/155139/oweisse_1.pdf?sequence=1>
-- <https://arxiv.org/pdf/2310.11559>
-- <https://cse.buffalo.edu/faculty/tkosar/cse710_spring19/bhardwaj-sec16.pdf>
-- <https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1554949268465917&disposition=inline>
-- <https://arxiv.org/pdf/2410.13752>
-- <https://ieeexplore.ieee.org/document/10410349>
-- <https://digital.wpi.edu/pdfviewer/db78tg16v>
-- <https://nsr.colorado.edu/coughlin/doc/sdnnfvsec2017.pdf>
-- <https://arxiv.org/html/2410.15240v1>
-- <https://cacm.acm.org/practice/trustworthy-ai-using-confidential-federated-learning/>
-- <https://www.securetechalliance.org/wp-content/uploads/TEE-101-White-Paper-FINAL2-April-2018.pdf>
-- <https://cseweb.ucsd.edu/~jzhao/files/DeepAttest-isca2019.pdf>
-- <https://www.cis.upenn.edu/~linhphan/papers/iotdi18-nguyen.pdf>
-- <https://dl.acm.org/doi/10.1145/3686261>
-- <https://arxiv.org/html/2305.18639v3>
-- <https://arxiv.org/pdf/2407.02960>
-- SoK: Understanding Designs Choices and Pitfalls of Trusted Execution Environments
-- TRUCE: Private Benchmarking to Prevent Contamination and Improve Comparative Evaluation of LLMs
-- Enabling Performant and Secure EDA as a Service in Public Clouds Using Confidential Containers
-- <https://arxiv.org/html/2402.11438v2>
-- <https://arxiv.org/pdf/2408.11601>
-- <https://arxiv.org/html/2402.11438v3>
-- <https://arxiv.org/pdf/2205.05747.pdf>
-- <https://www.cs.unc.edu/~porter/pubs/graphene-sgx.pdf>
-- <https://export.arxiv.org/ftp/arxiv/papers/1801/1801.05863.pdf>
-- <https://pages.cs.wisc.edu/~vg/papers/icdcs2017/icdcs2017.pdf>
-- <https://caslab.csl.yale.edu/workshops/hasp2018/HASP18_a9-mofrad_slides.pdf>
-- <https://users.cs.utah.edu/~vijay/papers/atc21.pdf>
-- <https://rokwire.illinois.edu/wp-content/uploads/2021/11/Safer_Illinois_Rokwall.pdf>
-- <https://arxiv.org/html/2410.13752v1>
-- <https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=wright1588637637290094&disposition=inline>
-- <https://arxiv.org/html/2408.00443v1>
-- <https://arxiv.org/pdf/2410.05930>
-- <https://www.nist.gov/system/files/documents/2024/06/11/02-OzgaGHSPLD.pdf>
-- <https://www2.eecs.berkeley.edu/Pubs/TechRpts/2022/EECS-2022-96.pdf>
-- <https://gts3.org/assets/papers/2017/seo:sgx-shield.pdf>
-- <https://dl.acm.org/doi/abs/10.1145/3590140.3629124>
-- <https://www.cs.cornell.edu/fbs/publications/UBP.SGX.pdf>
-- <https://users.cs.utah.edu/~lifeifei/papers/enclavestorage-vldb21-talk.pdf>
-- <https://people.cs.vt.edu/djwillia/papers/hotstorage19-aot_prep.pdf>
-- <https://bpb-us-w2.wpmucdn.com/u.osu.edu/dist/0/113190/files/2022/03/vSGX-Virtualizing-SGX-Enclaves-on-AMD-SEV.pdf>
-- <https://cs.nyu.edu/~mwalfish/classes/16sp/classnotes/l15.txt>
-- <https://www.academia.edu/82233581/Towards_Management_of_Chains_of_Trust_for_Multi_Clouds_with_Intel_SGX>
-- <https://collective.flashbots.net/t/intel-tdx-security-and-side-channels/3648>
-- <https://dl.acm.org/doi/10.1145/3652597>
-- <https://www.khoury.northeastern.edu/home/amirali/publications/SGX_VB_2016.pdf>
-- <https://homes.cs.washington.edu/~baris/public/foreshadow-toppick.pdf>
-- <https://csis.gmu.edu/ksun/publications/asiaccs21_sgxmalware.pdf>
-- <https://www.cse.psu.edu/~trj1/cse544-s18/slides/cse544-tc.pdf>
-- <https://scl.engr.uconn.edu/courses/ece4451/Lec7aSanctum.pdf>
-- <https://scl.engr.uconn.edu/courses/ece4451/lectures/sgx_architecture.pdf>
-- <https://cse.usf.edu/~attilaayavuz/article/20/CODASPY20_MOSE.pdf>
-- <https://www.cell.com/patterns/pdf/S2666-3899(24)00082-5.pdf>
-- <https://computing.southern.edu/jbeckett/cpte433w24/TopicPapers/Virtualization/954951_Container_Network_Security_FD_NEW.pdf>
-- <https://dl.acm.org/doi/pdf/10.1145/3662010.3663440>
-- <https://taesoo.kim/pubs/2016/jain:opensgx-slides.pdf>
-- <https://content.edgeless.systems/hubfs/Confidential%20Computing%20Whitepaper.pdf>
-- <https://www.microsoft.com/en-us/research/uploads/prod/2018/02/enclavedb.pdf>
-- <https://www.microsoft.com/en-us/research/publication/ccf-a-framework-for-building-confidential-verifiable-replicated-services/>
-- <https://www.microsoft.com/en-us/research/uploads/prod/2023/05/Confidential-Computing-within-AI-Accelerators.pdf>
-- <https://www.biorxiv.org/content/10.1101/2024.04.24.590989v1.full.pdf>
-- <https://arxiv.org/pdf/2409.03720>
-- <https://www.microsoft.com/en-us/research/publication/hecate-lifting-and-shifting-on-premises-workloads-to-an-untrusted-cloud/>
-- <https://courses.engr.illinois.edu/cs423/sp2016/lectures/VirtOS.pdf>
+## Researcher Pages
 
-### Videos
+- [Thomas Van Laere](https://thomasvanlaere.com/)
+- [Hwang Lab Publications](https://hwang595.github.io/publications/)
+- [Chung Kim](https://chungkim.io/)
+- [Mengyuan Li (MIT CSAIL)](https://people.csail.mit.edu/mengyuanli/)
+- [Pradyumna Shome](https://pradyumnashome.com/)
+- [ZZM Research](https://zzm7000.github.io/)
 
-- <https://www.youtube.com/watch?v=-DG2rtx1geo>
-- <https://www.youtube.com/watch?v=LjXGeGXe5ns>
-- <https://www.youtube.com/watch?v=vaphMcn-_5Q>
-- <https://www.makingdatabetter.com/2195663/15033088-ep13-the-future-of-the-cloud-confidential-computing-with-mike-bursell>
-- <https://www.youtube.com/watch?v=t1FEKALgucM>
-- <https://www.youtube.com/watch?v=rFXbW9ICLIk>
-- <https://www.youtube.com/watch?v=nTVP6IvFlDY>
-- <https://www.youtube.com/live/7w9x8DU1Q4Q>
-- <https://www.youtube.com/watch?v=cpD7RGit-sk>
-- <https://www.youtube.com/watch?v=EL8l7lFam3s>
-- <https://www.youtube.com/watch?v=coiPO3ZEHoo>
-- <https://www.youtube.com/playlist?list=PLyRlzZ0lHRWZ-_hQZcYhP_Invtz3m3Z9_>
-- [Is Honest Computing Achievable to Process Sensitive Policies? - Data for Policy 2024](https://www.youtube.com/watch?v=HdQbG9RHSTU)
-- <https://www.youtube.com/watch?v=nZeRM0hqqPE&list=PLbzoR-pLrL6rbN7fu5TId8VWAC5A8v5O7&index=3>
-- <https://www.youtube.com/watch?v=PhAz3SpBZV0>
-- <https://www.youtube.com/watch?v=uqFeCA-56pI&t=160s>
-- <https://www.youtube.com/watch?v=fY124uLvagI>
-- <https://www.youtube.com/watch?v=a3HzBmPuw5g>
-- <https://www.youtube.com/watch?v=qgcozT82w1w>
-- <https://www.youtube.com/watch?v=siou2QOttk8>
-- <https://www.youtube.com/watch?v=yaLoq5POv8Q&list=PLEhAl3D5WVvRm-U0mUK_Z7WLW_hbW9jdX&index=27>
-- <https://www.youtube.com/watch?v=LsqedhHe6DE>
-- <https://www.youtube.com/watch?v=5RiqnIqaBT4>
-- <https://www.youtube.com/watch?v=a-hd78NX36c>
-- <https://www.youtube.com/watch?v=upYwrRtl99c>
-- <https://www.youtube.com/watch?v=H9DP5CMqGac>
-- <https://www.youtube.com/watch?v=4otBPxF0kEw>
-- <https://www.youtube.com/watch?v=JpeWBKsAlI4>
-- <https://www.youtube.com/watch?v=YpGH6MvpTTA>
-- <https://www.youtube.com/watch?v=2TQt2zj9G0U>
-- <https://www.youtube.com/watch?v=tsxdCsMF_yI>
-- <https://www.youtube.com/watch?v=VdSY7lbnidI>
-- <https://www.youtube.com/watch?v=wecZWIzSQEE>
-- <https://www.youtube.com/watch?v=CcScwfJRb7k>
-- <https://www.youtube.com/watch?v=qNy8p03HqQo>
-- <https://www.youtube.com/watch?v=qh-lSqifhj8>
-- <https://www.youtube.com/watch?v=-jHu5pOW-sw>
-- <https://www.youtube.com/watch?v=CkiA5gxNkmM>
-- <https://www.youtube.com/watch?v=E8GFTjMaXpU>
-- <https://www.youtube.com/watch?v=gmcylzj1qTI>
-- <https://www.youtube.com/watch?v=-2YVuyhwUak>
-- <https://www.youtube.com/watch?v=fHSTQYwsCr8>
-- <https://www.youtube.com/watch?v=smukK1N49VE>
-- <https://www.youtube.com/watch?v=lA18uO-JU9Q>
-- <https://www.youtube.com/watch?v=Z29LFwbBYaA>
-- <https://www.youtube.com/watch?v=3Qjv7utnP-I>
-- <https://www.youtube.com/watch?v=_st-zWQsbSE>
-- [Fortifying AI Security in Kubernetes with Confidential Containers (CoCo)](https://www.youtube.com/watch?v=K6lGS17vsW0)
-- <https://www.youtube.com/watch?v=opfgCRoqjxg>
-- <https://www.youtube.com/watch?v=aEV_WGlKDO8>
-- <https://www.youtube.com/watch?v=-m-fKkSFJvg>
-- <https://mediaspace.illinois.edu/media/t/1_eyk9ikvf>
-- <https://mediaspace.illinois.edu/media/t/1_43ylv2cp>
-- <https://mediaspace.illinois.edu/media/t/1_c8325aga>
+## Community
 
-### Blogs and Articles
+- [Confidential Computing Consortium Slack](https://confidentialcomputing.slack.com/join/shared_invite/zt-2cmxaufhc-xZZZWpDNhrxZeSIqyTbT8A)
 
-- <https://pradyumnashome.com/>
-- <https://phlip9.com/notes/confidential%20computing/intel%20SGX/SGX%20lingo/>
-- <https://aaronbedra.com/post/sgx_getting_started/>
-- <https://tc.gtisc.gatech.edu/bss/2014/r/haven-slides.pdf>
-- <https://www.skyflow.com/podcast/confidential-computing-and-secure-enclaves-with-awss-arvind-raghu>
-- <https://fosdem.org/2024/schedule/event/fosdem-2024-2394-linux-on-a-confidential-vm-in-a-cloud-where-s-the-challenge-/>
-- <https://confidentialcomputing.io/resources/ccc-blog/>
-- <https://thomasvanlaere.com/posts/2023/10/azure-confidential-computing-secure-key-release-part-2/>
-- <https://thomasvanlaere.com/posts/2022/12/azure-confidential-computing-secure-key-release/>
-- <https://thomasvanlaere.com/posts/2024/06/register-azure-pipeline-agents-using-entra-workload-id-on-azure-kubernetes-service/>
-- <https://thomasvanlaere.com/posts/2024/03/azure-confidential-computing-coco-confidential-containers/>
-- Fritz Alder - Publications
-- <https://textbooks.cs.ksu.edu/cis527/7-backups-monitoring-devops/07-ubuntu-monitoring/index.html>
-- <https://news.knowledia.com/US/en/articles/unlocking-secure-private-ai-with-confidential-computing-463983301e30d52fbd960d1ba3b2072754310a6b>
-- <https://www.linkedin.com/pulse/state-confidential-containers-opinionated-christophe-parisel-oqume/>
-- <https://sovereign-cloud.nl/>
-- <https://www.infoworld.com/article/3595531/openhcl-understanding-microsofts-open-source-paravisor.html>
-- [The Tech Talks Daily Podcast: Confidential Computing](https://www.youtube.com/watch?v=opfgCRoqjxg)
-- <https://nand-research.com/research-note-nvidia-h100-confidential-computing/>
-- <https://developers.googleblog.com/en/enabling-more-private-gen-ai/>
-- Software Unscripted (podcast)
-- <https://brilliant.org/wiki/merkle-tree/>
-- <https://en.wikipedia.org/wiki/Merkle_tree>
-
-### GitHub and Tools
-
-- <https://github.com/deislabs/mystikos/>
-- <https://github.com/cc-api/full-disk-encryption>
-- <https://github.com/cc-api/confidential-cluster>
-- <https://github.com/ibm-cloud-docs/confidential-computing>
-- <https://github.com/gramineproject/gramine>
-- <https://github.com/confidential-containers/documentation/wiki/Acronyms>
-- <https://github.com/confidential-containers/documentation/wiki/Glossary>
-- <https://github.com/cc-api/container-integrity-measurement-agent/tree/main>
-- <https://github.com/microsoft/hcsshim/tree/master/internal/guest>
-- <https://github.com/hgarvison?tab=overview&from=2022-07-01&to=2022-07-31>
-- Scaleout Systems
-
-### Kubernetes and Containers
-
-- Kubernetes for the Absolute Beginners (Udemy)
-- [Learn Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/)
-- Kubernetes Tutorials by Geekflare
-- <https://blogs.oracle.com/linux/post/kata-containers-what-when-and-how>
-- <https://azureaggregator.wordpress.com/2023/02/24/preview-support-for-kata-vm-isolated-containers-on-aks-for-pod-sandboxing/>
-- <https://techcommunity.microsoft.com/t5/azure-confidential-computing/aligning-with-kata-confidential-containers-to-achieve-zero-trust/ba-p/3797876>
-- <https://www.prweb.com/releases/kata_containers_version_3_0_0_arrives_faster_more_secure_support_for_new_environments/prweb18947394.htm>
-- <https://www.techzine.eu/news/devops/91135/red-hat-supports-cncf-container-project-confidential-containers/>
-- <https://thenewstack.io/confidential-compute-on-azure-with-kubernetes/>
-- <https://www.alibabacloud.com/blog/kata-3-0-is-coming-start-experiencing-the-out-of-the-box-secure-container_599575>
-- <https://kccncna2023.sched.com/event/1R2sa/the-next-frontier-exploring-the-confidentiality-of-kubernetes-control-planes-jens-freimann-red-hat>
-- <https://itnext.io/how-your-confidential-containers-can-securely-retrieve-secrets-93d6f55b7b42>
-- <https://techcommunity.microsoft.com/t5/linux-and-open-source-blog/deep-dive-secure-orchestration-of-confidential-containers-on/ba-p/4137179>
-- <https://netflixtechblog.com/predictive-cpu-isolation-of-containers-at-netflix-91f014d856c7>
-- <https://hackdojo.io/presentations/XYPONZ4L6/trust-no-one-bringing-confidential-computing-to-containers>
-- <https://www.redhat.com/en/blog/confidential-containers-azure-openshift-technical-deep-dive>
-- <https://cloudyuga.guru/hands_on_lab/confidential-containers>
-- <https://www.redhat.com/en/blog/introducing-confidential-containers-trustee-attestation-services-solution-overview-and-use-cases>
-- <https://pradiptabanerjee.medium.com/from-sandboxed-containers-to-confidential-containers-enabling-cloud-native-confidential-computing-35936fad5998>
-- <https://docs.nvidia.com/datacenter/cloud-native/gpu-operator/23.6.1/gpu-operator-confidential-containers.html>
-- <https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/tlfs/nested-virtualization>
-- <https://docs.microsoft.com/en-us/azure/architecture/guide/open-source-scenarios>
-- <https://source.android.com/security/verifiedboot/dm-verity>
-- <https://techcommunity.microsoft.com/t5/azure-confidential-computing/memory-protection-for-ai-ml-model-inferencing/ba-p/4119105>
-- <https://fosdem.org/2024/schedule/track/confidential-computing/>
-- <https://fosdem.org/2024/schedule/>
-- <https://lpc.events/event/18/sessions/194/#20240920>
-
-### Notes
-
-Several software-based storage system protection techniques are integrated into mainstream operating systems. Encryption-enabled file systems (e.g., Linux ecryptfs, and Windows EFS) allow directory-level encryption. Block-layer encryption techniques such as dm-crypt directly encrypt the entire block device. dm-crypt also offers integrity checking of read-only filesystems where the entire block device is verified at once. This approach is particularly time-consuming and thus is typically used only during device startup. dm-verify uses a software maintained Merkle tree structure to compute and validate hashes of read-only data blocks against pre-computed hashes. In contrast, dm-integrity keeps individual hashes for each data block during runtime, which allows verification for read/write system. However, it cannot detect physical attacks such as reordering the blocks within the same device due to the lack of a secure root of trust in the system. Finally, software-based schemes can have substantial overhead as the en/decryption is done in software via executing many kernel sub-routines across software layers.
-
-#### Topics to Explore
-
-- Trivy
-- Container image vulnerability management
-- Code coverage
-- OIDC
-- PKI, Public Key, Private Key
-
-### Links
-
-- <https://redhat-crypto.gitlab.io/defensive-coding-guide/#chap-Defensive_Coding-TLS>
-
-### Shell Programming and Bash
-
-1. **Print Call Stack**: Use `trap DEBUG` and Bash variables like `${FUNCNAME[@]}`, `${BASH_SOURCE[@]}`, and `${BASH_LINENO[@]}` to trace function calls, making debugging easier.
-2. **getopts**: Parse command-line flags robustly and maintainably, avoiding manual parsing pitfalls.
-3. **wait**: Control concurrency by running multiple tasks in the background and waiting for them to finish, ensuring correct sequencing.
-4. **co-process**: Interact with a background command via built-in pipes (file descriptors), enabling bidirectional communication in real time.
-
-### Network Security
-
-- Ensure the server presents a TLS certificate that is valid according to the public key infrastructure (PKI) used by web browsers (e.g., certificates signed by trusted Certificate Authorities). For example, a website served over HTTPS (e.g., `https://example.com`) has a TLS certificate signed by a recognized CA (like Let's Encrypt). When a user visits the site, the browser verifies the certificate, confirming that the server is indeed `example.com`.
-- Have the client validate the server's TLS certificate against a known or expected certificate. In this case, you do not need to do host name checking (the certificate identity is already trusted). A mobile app might pin the server's TLS certificate. The app includes the certificate or its fingerprint in its configuration. When connecting, the app compares the server's certificate with the pinned fingerprint. If they match, the app trusts the connection; if not, it refuses to connect.
-- On Linux, use UNIX domain sockets (of the `PF_UNIX` protocol family). These sockets can be protected by file system permissions (ownership and mode bits), preventing unauthorized processes from binding to them. For example, a backend microservice listens on `/var/run/myservice.sock`. The file system permissions are set to `owner: myuser` and `mode: 0700`. This means only `myuser` (and processes running under it) can write to or bind that socket, reducing the chance of impersonation.
-- Always use TLS when connecting over untrusted or public networks to secure the communication channel and protect against eavesdropping or tampering.
-- Port numbers below 1024 (often called "trusted ports") can only be used by the root user on some operating systems. This restriction helps ensure that only privileged processes can bind to those ports.
-- If the server runs on a port number >= 1024, a non-root (local) user could potentially impersonate the server process by binding to the same port -- especially after forcing the real server to crash or otherwise stop.
-- Most TLS libraries enable insecure or obsolete cipher suites by default (e.g., anonymous Diffie-Hellman, export ciphers). You should use a whitelist of strong cipher suites rather than selectively disabling undesirable ones.
-
-### Working in a Team
-
-- How much time is each team member expected to be putting into working on the project?
-- How will you deal with unforeseen circumstances affecting team members (e.g. sickness, interviews, competitions)?
-- How will team members be kept accountable for their contributions?
-- When will your team meet? Setting aside a day and time for recurring meetings is a big marker of team success.
-- What platform(s) will your team be using to communicate? How quickly should team members respond?
-- Will you meet in person or via Zoom? What are the expectations or non-negotiables for these meetings?
-- If a deadline is approaching and tasks remain incomplete, how will you convene and communicate to ensure completion?
-- How will responsibilities and tasks be divided among team members?
-- Who will be responsible for organizing, facilitating, and taking notes during meetings? How will this responsibility rotate?
-- How will the team address any issues related to teamwork that may arise?
-- What steps will the team take if a member is contributing too little, and at what point will this issue be escalated to the instructors?
-
-### Types of People in a Project
-
-- **Contributor**: Aim for general team success, discuss solutions with your team. Ask for their opinion and demonstrate engagement during the activity.
-- **Know-it-all**: You think you are extremely experienced and know how to solve the problem on your own. Act like you do not need help and just tell your team to watch while you search for the tool. Try to tell other members how to search for information about the tool. Be combative and shoot another member's idea down if possible.
-- **Act silent**: Pay attention to the meeting, but simply do not suggest anything. You assume your team members know everything and don't feel you need to say much. Remain passive but friendly.
-- **Agree with everything**: Do not question the decisions of your team. You are afraid of raising conflicts; so just agree with everything during the activity.
-- **Hitchhiking**: Your goal is to do as little work as possible. Be friendly but not productive. Try to get other people to step in for you, for example you can act confused with the task and say that you need someone else to do this for you. You may have to make a quick, bad attempt to make it look like you tried to figure out the task.
-- **Commitment issue**: Go along with the meeting, until when tasks are being assigned, say that you are busy with something (interview prep, midterm, other assignment). If asked if they could do something else, or if being pressed further continue giving excuses why you can't contribute.
-- **Perfectionist**: You will perfect even minor details. Your role is to make sure the tool's source code is readable and aesthetically perfect and that also includes perfect comments. You should argue for or against the tool based on these minor details.
-
-### Linux Tools
-
-#### Helpful Utilities and Tools
-
-1. **`watch`**: Re-runs a command at fixed intervals, updating the display each time.
-2. **`time`**: Measures how long a command or script takes to run. With `/usr/bin/time -v`, can get max memory usage, page faults, etc.
-3. **`tee`**: Splits the output stream, saving it to a file while still displaying it on stdout.
-4. **`tmux`**: Terminal multiplexer, allowing multiple "windows" and "panes" within a single terminal session. Keep commands running on a remote server even if you disconnect. Multiple users can attach to the same tmux session for pair programming or debugging.
-5. **`cron`**: Time-based job scheduler. Can be used for automating backups/cleanups/log rotation, collecting metrics, or generating reports.
-6. **`entr`** or **`watchexec`**: Interactively re-run commands on file change. Can be used to automatically recompile on save.
-
-#### Debugging and Tracing
-
-1. **`gdb`**: The GNU Debugger for compiled languages (C, C++, Rust, etc.).
-2. **`ltrace`**: Traces library calls (e.g., glibc calls) made by a process.
-3. **`strace`**: Traces system calls (open, read, write, socket, etc.) and signals.
-4. **`lsof`**: Lists open files and the processes that opened them.
-5. **`eBPF`**: Lets you safely run tiny programs inside the Linux kernel, without modifying or rebooting it. Used to observe and control low-level system behavior -- like tracing kernel functions, filtering or modifying network traffic, and collecting custom metrics.
-6. **`journalctl`**: Reads logs managed by systemd.
-7. **`systemctl`**: Manages systemd services (start, stop, enable, disable).
-
-#### System Information
-
-1. **`ps aux`**: Shows all running processes with CPU/memory usage.
-2. **`free`**: Shows free and used memory, including swap usage.
-3. **`df`**: Check disk space usage on mounted filesystems.
-4. **`lsusb`**: Lists USB devices connected to the system.
-5. **`lspci`**: Shows PCI devices on the system (graphics cards, network controllers, etc.).
-6. **`lshw`**: Lists comprehensive hardware info -- CPU, memory, disks, network, etc.
-7. **`lscpu`**: Detailed CPU architecture information.
-
-#### Performance and Resource Monitoring
-
-1. **`perf`**: Profiler. Can use it to identify which functions consume the most CPU time or how time is spent in user-space or kernel-space by analyzing events like context switches, cache misses, etc.
-2. **`top`**: See CPU usage, memory usage, and which processes are hogging resources.
-3. **`iotop`**: Top-like interface for disk I/O.
-4. **`flameGraph`**: Visualize stack traces as a flame graph. Can use it to identify "hot" functions or loops in your program.
-5. **`vmstat`**: Reports processes, memory, paging, block I/O, traps, and CPU activity.
-6. **`iostat`**: Reports CPU and I/O usage of devices, partitions, and NFS.
-7. **`dstat`**: Combines `vmstat`, `iostat`, `netstat`, `ifstat` for a comprehensive, real-time resource usage view.
-8. **`sar`**: Continuously collects data, letting you investigate performance at a specific time in the past.
-
-#### Filesystem Management
-
-1. **`fdisk`** / **`parted`**: Manages disk partitions.
-2. **`mount`** / **`umount`**: Attach/detach filesystems (USB drives, NFS shares, partitions).
-
-### CI/CD
-
-**Continuous Integration (CI)** refers to the practice of automatically building and testing the codebase whenever new changes are introduced. This involves integrating code changes from multiple developers into a shared repository and running automated tests to ensure that the changes do not break the existing functionality.
-
-**Continuous Deployment/Delivery (CD)** refers to the practice of automatically deploying code changes to the production environment after they have been tested and approved. Continuous Deployment involves automatically deploying changes to the production environment as soon as they pass automated tests, while Continuous Delivery involves deploying changes to a staging environment for further testing and approval before being deployed to production.
-
-Together, CI/CD enables software teams to rapidly and safely develop, test, and deploy changes to the codebase, improving the speed and quality of software delivery while reducing the risk of errors and downtime.
+<script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

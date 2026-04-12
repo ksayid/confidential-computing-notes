@@ -37,10 +37,10 @@ description: A living notebook on trusted execution, secure containers, and clou
 </section>
 
 <section id="misc">
-  <h2>Miscellaneous</h2>
+  <h2>Reference</h2>
   <ul class="card-grid">
     <li><a href="docs/misc/cloud-fundamentals/">Cloud Fundamentals</a></li>
-    <li><a href="docs/misc/scratch/">Scratch Pad</a></li>
+    <li><a href="docs/misc/scratch/">Reading List</a></li>
   </ul>
 </section>
 <script src="{{ '/assets/js/dark-mode.js' | relative_url }}"></script>

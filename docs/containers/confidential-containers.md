@@ -26,6 +26,9 @@ approved environment before secrets or keys are released. The result is a
 familiar container experience with defense-in-depth protections well suited for
 sensitive or multi-tenant scenarios.
 
+## Overview (CoCo)
+Confidential Containers (CoCo) integrates Kubernetes with confidential computing primitives to run each pod inside a confidential VM. It builds on Kata Containers or AWS Firecracker, but adds memory encryption and remote attestation to ensure stronger isolation for each container. The result is the regular "pod" interface, but behind the scenes each workload gets hardware-level isolation.
+
 ## Key Building Blocks
 
 * **Hardware isolation** – Technologies such as AMD SEV-SNP and Intel TDX
@@ -135,17 +138,6 @@ Confidential containers on Azure Container Instances can use **verifiable execut
 - Help prevent unexpected application modifications that could potentially leak or compromise sensitive data.  
 
 By enforcing these verifiable execution policies, customers maintain control over their container security posture while leveraging the convenience and scalability of Azure Container Instances.
-
-## When to Use Confidential VMs vs. Confidential Containers
-
-You might deploy your solution on **Confidential VMs** if:
-
-1. You have legacy applications that **cannot be modified or containerized**, yet you need memory protection while data is being processed.  
-2. You are running **multiple applications requiring different operating systems** on a single piece of infrastructure.  
-3. You want to emulate an **entire computing environment**, including OS resources.  
-4. You are **migrating existing VMs** from on-premises to Azure.
-
-Conversely, you might consider **Confidential Containers** when you have containerized workloads or can containerize your application and want to benefit from hardware-based isolation at the container level, rather than the full VM scope.
 
 ## Containerization Background
 
