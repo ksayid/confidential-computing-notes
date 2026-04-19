@@ -127,14 +127,15 @@ Live migration isn't the only option for handling a maintenance event. A cloud p
 
 A separate **restart behavior** controls whether a terminated VM automatically comes back up, or stays down until an operator restarts it. During a brownout, workloads may see a short dip in performance — terminate-and-restart avoids the dip at the cost of a hard interruption, so the choice depends on whether the app prefers degraded-but-continuous or clean-but-offline.
 
-## What can't live-migrate
+## What's hard to migrate live
 
-Not every workload can move while running. Two common cases:
+The algorithm above works because a VM's state — guest memory, CPU registers, a few device queues — can be captured, copied, and reconstituted on another host. State that doesn't fit that model is where live migration gets hard or impossible:
 
-- **GPU-attached VMs** — the GPU state is hard to snapshot and transfer live, so these VMs are typically set to terminate. The platform instead gives advance notice (on the order of tens of minutes) before the maintenance event so the workload can checkpoint or drain gracefully.
-- **Preemptible / spot instances** — these trade availability for price and are always set to terminate on any disruption. Live migration is simply not offered.
+- **Passthrough devices** — when a VM is given direct access to a physical device (GPU, FPGA, SR-IOV NIC, etc.), the device's internal state lives in hardware, not in memory the hypervisor controls. There's no clean way to snapshot "what the GPU was in the middle of doing" and replay it on a different physical device.
+- **Hardware-bound identifiers** — anything tied to the specific physical machine (serial numbers, hardware-rooted keys, TPM state bound to this host's endorsement key) has to either be re-established on the new host or break the migration.
+- **Tight latency requirements** — workloads that can't tolerate even a brownout (let alone the blackout) aren't good fits; terminate-and-restart on a planned window may be cleaner.
 
-Some locally-attached resources *do* migrate — e.g., local SSDs can be moved along with the VM to the new host — but anything with hardware state that can't be captured in memory is usually in the "must terminate" bucket.
+Platforms handle these by either refusing live migration for the affected VM class, giving advance notice so the workload can drain/checkpoint, or offering a paravirtualized equivalent whose state *is* capturable.
 
 ## Testing live migration
 
