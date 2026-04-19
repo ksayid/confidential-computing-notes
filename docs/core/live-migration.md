@@ -66,13 +66,28 @@ Any live migration will put pressure on shared resources. In live unified migrat
 ## How live migration works
 
 1. **Allocate resources at the destination.** Before starting, make sure the target host can actually receive the VM (enough memory, CPU, etc.).
-2. **Iteratively copy memory pages.** While the VM keeps running on the source, start copying its memory to the destination. The catch: the VM is still writing to memory, so any page that gets modified after you copy it has to be copied again ("dirtied" pages). You iterate — copy everything, then copy the pages that got dirtied during that copy, then the ones dirtied during that pass, and so on. You stop either when only a small amount of dirty memory remains or when you're not making forward progress (the VM is dirtying pages as fast as you can copy them). You can dedicate more bandwidth to later iterations to shrink the window in which new dirtying can happen.
-3. **Stop and copy the remainder.** Pause the VM on the source and copy the last bit of dirty state. This is the only window where the service is actually down. At the end of this step, the source and destination are identical — either could be restarted. Once the destination acknowledges the copy, the migration is committed (in the database transaction sense — it's officially done and can't be half-finished).
+2. **Iteratively copy memory pages** (*pre-migration brownout*). While the VM keeps running on the source, start copying its memory to the destination. The catch: the VM is still writing to memory, so any page that gets modified after you copy it has to be copied again ("dirtied" pages). You iterate — copy everything, then copy the pages that got dirtied during that copy, then the ones dirtied during that pass, and so on. You stop either when only a small amount of dirty memory remains or when you're not making forward progress (the VM is dirtying pages as fast as you can copy them). You can dedicate more bandwidth to later iterations to shrink the window in which new dirtying can happen. The decision to exit this phase is driven by an algorithm that balances remaining dirty bytes against the VM's current rate of change.
+3. **Stop and copy the remainder** (*blackout*). Pause the VM on the source and copy the last bit of dirty state. This is the only window where the service is actually down. At the end of this step, the source and destination are identical — either could be restarted. Once the destination acknowledges the copy, the migration is committed (in the database transaction sense — it's officially done and can't be half-finished).
 4. **Redirect the network.** Send a "gratuitous ARP" packet — essentially an unsolicited announcement to the local network saying "this IP address now lives at this new MAC address" — so traffic starts arriving at the new host. A few packets in flight may be lost, but that kind of packet loss happens on normal networks anyway, and TCP will retransmit and recover.
-5. **Resume on the new host.** The VM starts running again on the destination.
+5. **Resume on the new host** (*post-migration brownout*). The VM starts running again on the destination. The source VM may still be hanging around providing supporting functionality — for example, forwarding packets to and from the target until the network fabric catches up with the VM's new location.
 6. **Delete the source.** Tear down the original VM on the source host. No residual dependencies — the old host is completely free.
 
-The pause in step 3 creates a brief blackout, but for most workloads it's invisible. The payoff: when a major vulnerability needs patching, hosts can be updated without customer-visible reboots — versus the alternative of forcing customers to schedule downtime.
+The three windows are often called **pre-migration brownout**, **blackout**, and **post-migration brownout**. The brownouts are periods of slightly degraded performance with the VM still running; the blackout is the brief pause where the service is actually down. For most workloads the blackout is invisible. The payoff: when a major vulnerability needs patching, hosts can be updated without customer-visible reboots — versus the alternative of forcing customers to schedule downtime.
+
+### VM attributes are preserved
+
+Migration doesn't change the VM's identity or configuration. Metadata, internal and external IP addresses, network settings, attached disks — all unchanged. From the guest's perspective (and from any external service talking to it) nothing happened.
+
+### The scheduling layer
+
+An individual migration is only half the story. Something upstream has to decide **when** a VM migrates and **which** VMs migrate **when**. That's a separate cluster-management layer that:
+
+- Watches for trigger events — hardware-failure signals, planned maintenance windows, software-update rollouts.
+- Schedules migrations against policies — caps on how many VMs for a single customer can migrate at once, capacity-utilization limits on target hosts, fairness across tenants, etc.
+- Notifies the VM (or its operator) that a migration is about to happen, with a waiting period before the actual move.
+- Picks a target host, spins up an empty receiving VM there, and establishes an authenticated channel between source and target before any state is copied.
+
+This is where fleet-wide concerns live: you don't want every VM on a failing rack to migrate simultaneously and stampede the rest of the data center.
 
 ## Memory migration strategies
 
@@ -102,6 +117,31 @@ Hybrid-copy combines the two, trading off between minimizing downtime and minimi
 - **Managed migration** moves the OS without its cooperation — the VMM does everything from outside, and the guest OS doesn't even know it's happening.
 - **Managed migration with paravirtualization** is the same thing but with the guest OS pitching in on specific optimizations: for instance, *stunning* (briefly freezing) rogue processes that are dirtying memory too fast to keep up with, or pushing unused memory pages out of the VM so they don't need to be copied at all. ("Paravirtualization" means the guest OS is modified to cooperate with the VMM, rather than being unaware of it.)
 - **Self migration** goes further: the OS itself drives the migration. This is harder because you're trying to snapshot a running OS using that same OS — it's like trying to take a photo of yourself taking the photo.
+
+## Availability policies
+
+Live migration isn't the only option for handling a maintenance event. A cloud platform typically lets the VM owner pick a per-VM **maintenance behavior**:
+
+- **Live-migrate** — the default for most workloads. The VM keeps running through the event.
+- **Terminate** — stop the VM when a maintenance event fires. Suitable for workloads that need constant, maximum performance (no brownout acceptable), or for applications that are already architected to handle instance failures.
+
+A separate **restart behavior** controls whether a terminated VM automatically comes back up, or stays down until an operator restarts it. During a brownout, workloads may see a short dip in performance — terminate-and-restart avoids the dip at the cost of a hard interruption, so the choice depends on whether the app prefers degraded-but-continuous or clean-but-offline.
+
+## What can't live-migrate
+
+Not every workload can move while running. Two common cases:
+
+- **GPU-attached VMs** — the GPU state is hard to snapshot and transfer live, so these VMs are typically set to terminate. The platform instead gives advance notice (on the order of tens of minutes) before the maintenance event so the workload can checkpoint or drain gracefully.
+- **Preemptible / spot instances** — these trade availability for price and are always set to terminate on any disruption. Live migration is simply not offered.
+
+Some locally-attached resources *do* migrate — e.g., local SSDs can be moved along with the VM to the new host — but anything with hardware state that can't be captured in memory is usually in the "must terminate" bucket.
+
+## Testing live migration
+
+Live migration is a critical piece of production infrastructure, and it's too complex to trust without continuous testing. Two practices are worth calling out:
+
+- **Fault injection** — deliberately trigger failures at each interesting point in the migration algorithm (network drops mid-copy, destination crash during blackout, source crash after commit, etc.) and verify the system either completes the migration or cleanly aborts. Both active failures (something goes wrong) and passive ones (something just doesn't respond) should be covered.
+- **Simulated maintenance events** — expose a knob that lets operators trigger a migration on-demand against their own VMs. This lets them validate their availability policies: does the app actually survive a live-migrate brownout? Do preemptible workloads shut down cleanly? Does the terminate-and-restart path come back to a healthy state?
 
 ## Results
 
