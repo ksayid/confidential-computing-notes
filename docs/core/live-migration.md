@@ -16,6 +16,7 @@ Migration — moving a running workload from one physical machine to another —
 - **Controlled maintenance windows** instead of emergency ones: move work off a machine before taking it down.
 - **Fault tolerance**: move jobs away from hardware that's getting flaky but hasn't failed yet.
 - **Energy efficiency**: consolidate loads onto fewer machines to reduce cooling (A/C) needs.
+- **Operator-initiated placement**: deliberately move a VM to a different host or host group — e.g., from a shared host to a dedicated one, or to rebalance a noisy neighbor situation — without restarting the workload.
 
 The data center is the natural environment for all of this, since you have many machines under unified control.
 
@@ -67,12 +68,12 @@ Any live migration will put pressure on shared resources. In live unified migrat
 
 1. **Allocate resources at the destination.** Before starting, make sure the target host can actually receive the VM (enough memory, CPU, etc.).
 2. **Iteratively copy memory pages** (*pre-migration brownout*). While the VM keeps running on the source, start copying its memory to the destination. The catch: the VM is still writing to memory, so any page that gets modified after you copy it has to be copied again ("dirtied" pages). You iterate — copy everything, then copy the pages that got dirtied during that copy, then the ones dirtied during that pass, and so on. You stop either when only a small amount of dirty memory remains or when you're not making forward progress (the VM is dirtying pages as fast as you can copy them). You can dedicate more bandwidth to later iterations to shrink the window in which new dirtying can happen. The decision to exit this phase is driven by an algorithm that balances remaining dirty bytes against the VM's current rate of change.
-3. **Stop and copy the remainder** (*blackout*). Pause the VM on the source and copy the last bit of dirty state. This is the only window where the service is actually down. At the end of this step, the source and destination are identical — either could be restarted. Once the destination acknowledges the copy, the migration is committed (in the database transaction sense — it's officially done and can't be half-finished).
+3. **Stop and copy the remainder** (*blackout*). Pause the VM on the source and copy the last bit of dirty state. This is the only window where the service is actually down. At the end of this step, the source and destination are identical — either could be restarted. Once the destination acknowledges the copy, the migration is committed (in the database transaction sense — it's officially done and can't be half-finished). One subtle effect: wall-clock time keeps advancing while the VM is paused, so when the VM resumes its system clock appears to jump forward by the blackout duration. Short jumps are tolerable, but longer ones need a guest-side daemon to detect the skew and resync the clock.
 4. **Redirect the network.** Send a "gratuitous ARP" packet — essentially an unsolicited announcement to the local network saying "this IP address now lives at this new MAC address" — so traffic starts arriving at the new host. A few packets in flight may be lost, but that kind of packet loss happens on normal networks anyway, and TCP will retransmit and recover.
 5. **Resume on the new host** (*post-migration brownout*). The VM starts running again on the destination. The source VM may still be hanging around providing supporting functionality — for example, forwarding packets to and from the target until the network fabric catches up with the VM's new location.
 6. **Delete the source.** Tear down the original VM on the source host. No residual dependencies — the old host is completely free.
 
-The three windows are often called **pre-migration brownout**, **blackout**, and **post-migration brownout**. The brownouts are periods of slightly degraded performance with the VM still running; the blackout is the brief pause where the service is actually down. For most workloads the blackout is invisible. The payoff: when a major vulnerability needs patching, hosts can be updated without customer-visible reboots — versus the alternative of forcing customers to schedule downtime.
+The three windows are often called **pre-migration brownout** (sometimes *source brownout*), **blackout**, and **post-migration brownout** (sometimes *target brownout*). The brownouts are periods of slightly degraded performance with the VM still running — disk, CPU, memory, and network utilization can all dip temporarily as bandwidth and cycles are spent on the migration. The blackout is the brief pause where the service is actually down. For most workloads the blackout is invisible. The payoff: when a major vulnerability needs patching, hosts can be updated without customer-visible reboots — versus the alternative of forcing customers to schedule downtime.
 
 ### VM attributes are preserved
 
@@ -82,7 +83,7 @@ Migration doesn't change the VM's identity or configuration. Metadata, internal 
 
 An individual migration is only half the story. Something upstream has to decide **when** a VM migrates and **which** VMs migrate **when**. That's a separate cluster-management layer that:
 
-- Watches for trigger events — hardware-failure signals, planned maintenance windows, software-update rollouts.
+- Watches for trigger events — hardware-failure signals, planned maintenance windows, software-update rollouts, firmware/BIOS updates becoming available, or an operator explicitly requesting a migration for placement reasons.
 - Schedules migrations against policies — caps on how many VMs for a single customer can migrate at once, capacity-utilization limits on target hosts, fairness across tenants, etc.
 - Notifies the VM (or its operator) that a migration is about to happen, with a waiting period before the actual move.
 - Picks a target host, spins up an empty receiving VM there, and establishes an authenticated channel between source and target before any state is copied.
