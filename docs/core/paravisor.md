@@ -1,5 +1,5 @@
 ---
-title: Paravisor: Secure Execution in Confidential Computing
+title: "Paravisor: Secure Execution in Confidential Computing"
 parent: Core Concepts
 nav_order: 5
 ---
