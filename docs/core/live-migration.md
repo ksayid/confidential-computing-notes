@@ -35,13 +35,33 @@ VMM migration (Virtual Machine Monitor migration — moving an entire virtual ma
 
 Non-live VMM migration (where the VM is suspended, moved, and resumed) is also useful outside the data center. You can migrate your work environment from office to home and back by putting the suspended VM on a USB key or sending it over the network — the "Collective" project called this "Internet suspend and resume."
 
+## Classifications
+
+Live migration schemes can be classified along two axes.
+
+**By what has to move (storage topology):**
+- **Live memory migration** — the source and destination share storage, so only the VM's memory and device state need to move.
+- **Live storage migration** — the VM's disk image also has to be transferred.
+- **Live unified migration** — both memory and storage move together (required when there's no shared storage between the hosts).
+
+**By network scope:**
+- **Over LAN** — source and destination are in the same data center, with high bandwidth and low latency between them.
+- **Over WAN** — migration across a wide-area link. Much more challenging because of limited bandwidth and high latency; the same algorithms that work cleanly on a LAN can stall or take much longer.
+
 ## Goals of live migration
 
-Live migration — moving the VM while it keeps running — has three goals in tension with each other:
+Live migration — moving the VM while it keeps running — has several goals in tension with each other:
 
 - **Minimize downtime** (the window where the service is unavailable).
 - **Keep total migration time manageable.**
+- **Minimize total transferred bytes** — the total amount of data pushed over the network from source to destination.
 - **Limit the impact** on both the VM being moved and the local network during the move.
+
+A good live migration scheme seeks a reasonable trade-off among these — they can't all be minimized at once.
+
+### Impact on other services
+
+Any live migration will put pressure on shared resources. In live unified migration over LAN, for example, memory and storage are both transferred in a succession of iterations, and that traffic can easily consume the bandwidth between source and destination — starving other active services. Some service degradation is unavoidable, but it can be alleviated by throttling the migration: cap the network bandwidth and CPU resources the migration process is allowed to consume.
 
 ## How live migration works
 
@@ -53,6 +73,29 @@ Live migration — moving the VM while it keeps running — has three goals in t
 6. **Delete the source.** Tear down the original VM on the source host. No residual dependencies — the old host is completely free.
 
 The pause in step 3 creates a brief blackout, but for most workloads it's invisible. The payoff: when a major vulnerability needs patching, hosts can be updated without customer-visible reboots — versus the alternative of forcing customers to schedule downtime.
+
+## Memory migration strategies
+
+The "iteratively copy memory pages" step above describes one specific approach — **pre-copy**. There are three main strategies for moving memory state, differing in the order they transfer pages and when the VM switches hosts.
+
+### Pre-copy
+
+Pre-copy is easy to design and doesn't require a fast network between hosts, so it's implemented in most mainstream hypervisors (Xen, KVM, VMware ESX). It has two phases:
+
+1. **Warm-up phase**: Copy the whole memory from source to destination while the VM keeps running on the source. Any pages dirtied during that copy are re-copied in a second iteration, and so on. This repeats until the remaining dirty memory drops below a pre-defined threshold. Convergence depends on the copy rate staying faster than the VM's memory write rate — if the VM dirties pages faster than you can send them, the iterations never shrink.
+2. **Stop-and-copy phase**: Suspend the VM on the source, copy the last bit of dirty memory, then resume the VM on the destination.
+
+### Post-copy
+
+Post-copy reverses the order. It starts by suspending the source VM, copying a minimal subset of execution state (CPU registers, etc.) to the destination, and immediately transferring execution control — the VM resumes on the destination almost right away.
+
+Any access to un-transferred memory triggers a page fault, which is trapped at the destination and redirected back to the source over the network to fetch that page. In parallel, a background thread copies over the remaining memory while the VM runs on the destination.
+
+This minimizes total transferred bytes (each page is sent at most once) but makes the destination VM dependent on the source during the copy — page faults add latency, and if the network between them hiccups, the VM is stuck.
+
+### Hybrid-copy
+
+Hybrid-copy combines the two, trading off between minimizing downtime and minimizing total migration time. It runs some pre-copy warm-up iterations first, then switches to post-copy. The initial warm-up reduces the chance of page faults on the destination, because a large portion of memory is already there by the time execution transfers.
 
 ## Variants
 
