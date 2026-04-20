@@ -1,7 +1,8 @@
 ---
-title: Intel TDX Module ABI Overview
-parent: Core Concepts
-nav_order: 10
+title: ABI Reference
+parent: Intel TDX
+grand_parent: Core Concepts
+nav_order: 2
 ---
 
 # Intel TDX Module ABI: A Cohesive Overview

@@ -1,7 +1,7 @@
 ---
 title: Confidential AI
 parent: Core Concepts
-nav_order: 6
+nav_order: 7
 ---
 
 Confidential computing relies on trusted execution environments (TEEs), which create a secure perimeter where data remains encrypted in use. These environments provide the abstraction of data being encrypted at all times—from the perspective of an attacker, even someone with root privileges or access to the hypervisor. In essence, TEEs ensure that:

@@ -1,7 +1,8 @@
 ---
-title: Intel TDX Trusted I/O (TDISP)
-parent: Core Concepts
-nav_order: 10
+title: Trusted I/O (TDISP)
+parent: Intel TDX
+grand_parent: Core Concepts
+nav_order: 3
 ---
 
 # Intel TDX Trusted I/O (TDISP)

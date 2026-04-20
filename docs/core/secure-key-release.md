@@ -1,7 +1,7 @@
 ---
 title: Secure Key Release
 parent: Core Concepts
-nav_order: 3
+nav_order: 6
 ---
 
 ## Key Management System (KMS)
@@ -77,4 +77,30 @@ Key differences in Secure Key Release:
 * Key Vault’s Release Policy:
     * Matches the claims in the Environment Assertion against the Key Vault’s requirements.
 
+## Encrypted filesystems
 
+A natural downstream use of secure key release is **encrypted-at-rest filesystems**: a TEE attests, the KMS releases a disk encryption key to it, and the TEE uses the key to mount an encrypted volume.
+
+A **filesystem** is responsible for organizing, storing, and retrieving data on a storage device, like a hard drive or SSD. The goal of a cryptographic file system is to secure data stored on disk through encryption — without the correct encryption key, the data is unreadable to unauthorized users.
+
+Two approaches:
+
+* **Volume encryption** encrypts the entire storage or volume. When data is written to or read from the storage, it passes through an encryption layer that encrypts or decrypts the data on-the-fly. This method uses a single cryptographic key for both data and metadata, effectively making the entire volume secure from unauthorized access. However, because it encrypts everything with a single key, individual file security is not possible.
+    * **dm-crypt**: Linux kernel feature that provides a generic way to create encrypted volumes.
+* **File system level encryption** encrypts individual files or directories within the file system itself. Each file or directory can be encrypted with a different key, providing a more granular level of security. This approach is particularly useful for multi-user systems where different users or applications may need access to specific files without having access to the entire volume.
+
+### Encrypted filesystem sidecar
+
+Confidential containers on Azure Container Instances provide a sidecar container to mount a remote encrypted filesystem previously uploaded to Azure Blob Storage. The sidecar transparently retrieves the hardware attestation and the certificate chain endorsing the attestation’s signing key. It then requests Microsoft Azure Attestation to authorize an attestation token, which is required for securely releasing the filesystem’s encryption key from the managed HSM. The key is released to the sidecar container only if the attestation token is signed by the expected authority and the attestation claims match the key’s release policy. The sidecar transparently uses the key to mount the remote encrypted filesystem; this preserves the confidentiality and integrity of the filesystem upon any operation from a container in the container group.
+
+The sidecar is a form of **volume encryption**:
+
+* The sidecar container is responsible for accessing and mounting a filesystem that is encrypted and stored remotely (Azure Blob Storage). Once decrypted, the entire filesystem becomes accessible to the application container.
+* The process of obtaining the encryption key through hardware attestation and the Azure Attestation token further suggests a volume encryption approach: a single key is used to unlock the entire filesystem, rather than managing separate keys per file or directory.
+
+> Imagine a locked chest (the encrypted filesystem) containing treasures (the data). The sidecar container has the key (encryption key) to this chest. When the application wants to access the contents, the sidecar unlocks the chest and presents the treasures as if they were always out in the open, hiding the fact that they were locked away when not needed. The application can use the treasures without ever needing to know about the lock or the key.
+
+References:
+
+* https://techcommunity.microsoft.com/t5/azure-confidential-computing/nlp-inferencing-on-confidential-azure-container-instance/ba-p/3827628
+* `cryptsetup`

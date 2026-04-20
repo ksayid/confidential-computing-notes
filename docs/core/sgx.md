@@ -1,7 +1,7 @@
 ---
-title: Intel SGX Overview and Remote Attestation
+title: Intel SGX
 parent: Core Concepts
-nav_order: 2
+nav_order: 3
 ---
 
 ## 1. Introduction
