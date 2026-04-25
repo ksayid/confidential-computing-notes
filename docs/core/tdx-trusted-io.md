@@ -51,3 +51,5 @@ Much of this design isn't Intel-specific. SPDM and IDE are general operating-sys
 ## The Bottom Line
 
 First-generation TDX kept devices outside the trust boundary and paid for it with expensive software encryption and memory copying. This extension lets trusted devices operate as though they're inside the protected VM, with hardware-enforced isolation and link encryption replacing the software workarounds — and it does so through a standards-based architecture that isn't entirely proprietary to Intel.
+
+For a worked example of confidential computing actually extended to a peripheral today — using a vendor-specific design rather than the TDISP standard — see [NVIDIA GPU Confidential Computing](gpu-confidential-computing).
