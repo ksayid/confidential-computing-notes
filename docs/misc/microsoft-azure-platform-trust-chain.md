@@ -259,7 +259,7 @@ Reading these eight documents together, the cross-document relationships become 
 - Use **Confidential GPUs** (the `NCCadsH100v5` series, e.g., `Standard_NCC40ads_H100_v5`, NVIDIA H100 NVL on AMD SEV-SNP) when the same threat model applies to GPU workloads. See [GPU Confidential Computing]({{ site.baseurl }}/docs/core/gpu-confidential-computing/).
 
 **On verifying the chain:**
-- Attestation, not signature checking, is what proves the chain end-to-end. PCR quotes from TPM 2.0 (or attestation reports from SEV-SNP / TDX) give a relying party an auditable record of what ran. See the [hardware trust and key management]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/) note for the host-attestation, THIM, and Secure Key Release flow built on top of these PCRs, and [Secure Key Release]({{ site.baseurl }}/docs/core/secure-key-release/) for the cross-cloud pattern.
+- Attestation, not signature checking, is what proves the chain end-to-end. PCR quotes from TPM 2.0 (or attestation reports from SEV-SNP / TDX) give a relying party an auditable record of what ran. See the [hardware trust and key management]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/) note for the host-attestation, THIM, and Secure Key Release flow built on top of these PCRs, and [Artifact Map]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/#8-artifact-map) for a concise producer/consumer/verifier view of quote, collateral, token, and policy handoffs.
 
 **On hash hygiene:**
 - Treat any signature over a SHA-1 digest as untrusted. Use SHA-256 or stronger across TLS, code signing, and PCR banks.
