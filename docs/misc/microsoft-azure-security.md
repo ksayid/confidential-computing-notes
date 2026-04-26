@@ -92,7 +92,7 @@ Several Azure services handle keys, and they sound similar but differ in importa
 | **Azure Key Vault Premium** | Same API as Standard, but keys are stored in a shared HSM. New keys created on "HSM Platform 2" are FIPS 140-3 Level 3; older Platform 1 keys are FIPS 140-2 Level 2. |
 | **Azure Managed HSM** | Single-tenant, customer-controlled HSM pool. FIPS 140-3 Level 3. The customer owns the *security domain* — a cryptographic backup of the HSM partition; lose it, lose every key forever. Use when you need a customer-owned root of trust. |
 
-The lineup widens to five options once Azure Cloud HSM (lift-and-shift IaaS HSM) and Azure Payment HSM (PCI-HSM-certified) are included, and the connection to confidential computing — Secure Key Release that gates key handover on attestation — is covered in the [hardware trust and key management]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/) note.
+The lineup widens to five options once Azure Cloud HSM (lift-and-shift IaaS HSM) and Azure Payment HSM (PCI-HSM-certified) are included, and the connection to confidential computing — Secure Key Release that gates key handover on attestation — is covered in the [hardware trust and key management]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/) note. For a compact artifact-level view (quote/event log/collateral/token/policy and who verifies each), see [Artifact Map]({{ site.baseurl }}/docs/misc/microsoft-azure-hardware-trust-and-keys/#8-artifact-map).
 
 Two related but distinct concepts are worth disentangling:
 
