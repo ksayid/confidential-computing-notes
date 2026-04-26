@@ -10,4 +10,4 @@ A living notebook on trusted execution, secure containers, and cloud security.
 - **[Core Concepts](docs/core/)** — TEEs, SGX, attestation, encrypted filesystems
 - **[Container Technologies](docs/containers/)** — Containers, Kata, CoCo, Kubernetes
 - **[Tools & Frameworks](docs/tools/)** — gRPC, Open Policy Agent
-- **[Reference](docs/misc/)** — Cloud fundamentals, reading list
+- **[Reference](docs/misc/)** — Cloud fundamentals, Microsoft Azure overview, Azure security architecture, Azure security model, platform trust chain, hardware trust and key management, reading list

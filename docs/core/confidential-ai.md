@@ -49,6 +49,8 @@ Recently, NVIDIA added enclave support for their H100 GPUs, which is a significa
 3. Once verified, a secure communication channel is established, ensuring all communication over PCIe is encrypted.
 4. This setup enables the CVM to generate a global attestation report, confirming that both the CPU enclave and the GPU are properly configured. Users can rely on this report to ensure their confidential VM is securely connected to the GPU(s). A secure channel is then established to transmit sensitive data to the GPU.
 
+For a deeper look at how NVIDIA actually implements GPU-CC — the architectural engines (FSP, GSP, SEC2, CE), the secure-boot and key-derivation flow, and a security analysis of each runtime data path — see [NVIDIA GPU Confidential Computing](gpu-confidential-computing).
+
 ## Using Enclaves for Generative AI (GenAI)
 At a high level, using enclaves for GenAI is straightforward:
 1. **Model in the Enclave:** Place the AI model inside an enclave.

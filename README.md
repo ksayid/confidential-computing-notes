@@ -18,7 +18,7 @@ Confidential computing is a fast-moving field spread across vendor docs, academi
 ## What's Covered
 
 ### [Core Concepts](https://ksayid.github.io/confidential-computing-notes/docs/core/)
-Foundational topics including confidential computing principles, TEE security models, Intel SGX enclaves, Intel TDX (overview, architecture, ABI, trusted I/O), encrypted filesystems, secure key release, paravisors, and live migration of confidential VMs.
+Foundational topics including confidential computing principles, TEE security models, Intel SGX enclaves, Intel TDX (overview, architecture, ABI, trusted I/O), NVIDIA GPU confidential computing, encrypted filesystems, secure key release, paravisors, and live migration of confidential VMs.
 
 ### [Container Technologies](https://ksayid.github.io/confidential-computing-notes/docs/containers/)
 Container fundamentals, Kata Containers, Confidential Containers (CoCo), and Kubernetes integration for running workloads inside TEEs.
@@ -27,7 +27,7 @@ Container fundamentals, Kata Containers, Confidential Containers (CoCo), and Kub
 gRPC and Open Policy Agent as they relate to confidential computing infrastructure.
 
 ### [Reference](https://ksayid.github.io/confidential-computing-notes/docs/misc/)
-Cloud fundamentals and supplementary notes.
+Cloud fundamentals, a Microsoft Azure overview, Azure security architecture (infrastructure trust boundaries, encryption layers, double encryption), the Azure security model (shared responsibility, tenant isolation, customer data protection), the Azure platform trust chain (UEFI, Secure Boot, firmware integrity, code integrity, dm-verity, hashes, hypervisor), Azure hardware trust and key management (SoC, host attestation, THIM, encryption layers, HSMs, Secure Key Release), and supplementary notes.
 
 ## Local Development
 
