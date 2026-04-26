@@ -1,7 +1,7 @@
 ---
 title: TEE Security Principles
 parent: Core Concepts
-nav_order: 8
+nav_order: 2
 ---
 
 # TEE Security Principles
