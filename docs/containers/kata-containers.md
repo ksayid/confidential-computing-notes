@@ -197,7 +197,7 @@ In scenarios without nested virtualization support (or when you prefer a differe
 ### Security Policy for Kata Confidential Containers
 In Confidential Computing, the goal is to protect data in use by running computations inside a hardware-attested TEE. On AKS, Confidential Containers implement this principle by running each Kubernetes pod inside a Utility VM (UVM) protected by AMD SEV-SNP.
 
-The security model in CoCo (and specifically on AKS) enforces policy decisions within the TEE boundary using the Kata agent. This agent is part of the Trusted Computing Base (TCB) and relies on the Open Policy Agent (OPA) to block or allow specific container operations. Because the agent is part of the Trusted Computing Base (TCB), it must protect itself from potentially malicious inputs or APIs from components outside the TEE (e.g., Kata shims or container runtimes on the host).
+The security model in CoCo (and specifically on AKS) enforces policy decisions within the TEE boundary using the Kata agent. This agent is part of the Trusted Computing Base (TCB) and relies on the [Open Policy Agent (OPA)]({{ site.baseurl }}/docs/tools/open-policy-agent/) to block or allow specific container operations. Because the agent is part of the Trusted Computing Base (TCB), it must protect itself from potentially malicious inputs or APIs from components outside the TEE (e.g., Kata shims or container runtimes on the host).
 
 1. Policy Specification
     * Written in the Rego policy language.

@@ -1,7 +1,7 @@
 ---
 title: Intel TDX
 parent: Core Concepts
-nav_order: 4
+nav_order: 5
 has_children: true
 ---
 
@@ -11,9 +11,9 @@ Intel Trust Domain Extensions (TDX) is Intel's VM-level confidential computing t
 
 This page is the conceptual overview. For deeper material, see:
 
-- [ABI reference](abi.md) — the binary interface the hypervisor and guest TDs use to talk to the TDX Module.
-- [Trusted I/O (TDISP)](trusted-io.md) — bringing devices like GPUs and NICs into the TD's trust boundary.
-- [Live migration](live-migration.md) — TDX-specific live migration via Migration TDs.
+- [ABI reference]({{ site.baseurl }}/docs/core/tdx/abi/) — the binary interface the hypervisor and guest TDs use to talk to the TDX Module.
+- [Trusted I/O (TDISP)]({{ site.baseurl }}/docs/core/tdx/trusted-io/) — bringing devices like GPUs and NICs into the TD's trust boundary.
+- [Live migration]({{ site.baseurl }}/docs/core/tdx/live-migration/) — TDX-specific live migration via Migration TDs.
 
 ## The core idea
 
@@ -122,9 +122,9 @@ Intel backs this with a certification infrastructure rooted in Intel-issued cert
 
 The quote request itself is asynchronous — a successful call only means the host received the request, not that the quote is ready. The TD has to wait for an event notification and then check a shared buffer for the result. Multiple concurrent quote requests are allowed.
 
-Attestation also underpins storage encryption. Since a TD's storage is typically encrypted, the firmware uses attestation during boot to fetch volume encryption keys from a remote key server (see [Secure Key Release](../secure-key-release.md)), then passes them to the OS through a dedicated hardware configuration table.
+Attestation also underpins storage encryption. Since a TD's storage is typically encrypted, the firmware uses attestation during boot to fetch volume encryption keys from a remote key server (see [Secure Key Release]({{ site.baseurl }}/docs/core/secure-key-release/)), then passes them to the OS through a dedicated hardware configuration table.
 
-For the on-the-wire structures (`TDREPORT_STRUCT`, `REPORTMACSTRUCT`, `TDINFO_STRUCT`, `TDSIGSTRUCT`, `TDKEYREQUEST`), see the [ABI reference](abi.md#attestation-proving-a-td-is-what-it-claims).
+For the on-the-wire structures (`TDREPORT_STRUCT`, `REPORTMACSTRUCT`, `TDINFO_STRUCT`, `TDSIGSTRUCT`, `TDKEYREQUEST`), see the [ABI reference]({{ site.baseurl }}/docs/core/tdx/abi/#attestation-proving-a-td-is-what-it-claims).
 
 ## SVNs and TCB recovery
 
@@ -138,7 +138,7 @@ The TDX Module tracks each TD using two primary state machines, plus per-page st
 
 **Lifecycle state** lives in the **Trust Domain Root (TDR)** and tracks the high-level resource lifecycle: *HKID Assigned* (initial state after creation) → *Keys Configured* (encryption keys programmed — where the TD spends most of its life) → *Blocked* (resources being reclaimed) → *Teardown* (final teardown).
 
-**Operation state** lives in the **TD Control Structure (TDCS)** and controls which operations are permitted at any given time. It is the primary gating mechanism for API access and is the more complex of the two machines. Key states include *Initialized*, *Runnable*, and several migration-specific states (see [Live Migration](live-migration.md)).
+**Operation state** lives in the **TD Control Structure (TDCS)** and controls which operations are permitted at any given time. It is the primary gating mechanism for API access and is the more complex of the two machines. Key states include *Initialized*, *Runnable*, and several migration-specific states (see [Live Migration]({{ site.baseurl }}/docs/core/tdx/live-migration/)).
 
 **Secure EPT entry state** is carried per-entry in the Secure EPT, ensuring that page-level operations (reads, writes, migrations) only happen when the entry is in an acceptable state for that operation.
 
@@ -162,7 +162,7 @@ When a TD boots, the guest firmware sets up a mailbox-based wakeup structure so 
 
 A **Service TD** is a special Trust Domain that provides a dedicated utility — such as a security service or management function — to one or more target TDs. Connections between Service TDs and target TDs are many-to-many and can be established without the target TD's approval. Once connected, the Service TD can read and write specific metadata of the target TD (limited by the Service TD's designated role), and its presence is reflected in the target TD's attestation report, effectively extending the target's set of trusted components.
 
-The current canonical Service TD is the **Migration TD (migTD)**, which brokers cross-platform live migration — see [Live Migration](live-migration.md).
+The current canonical Service TD is the **Migration TD (migTD)**, which brokers cross-platform live migration — see [Live Migration]({{ site.baseurl }}/docs/core/tdx/live-migration/).
 
 ## What TDX doesn't do
 
@@ -176,7 +176,7 @@ TDX is explicit about its boundaries:
 
 TDX 1.0 covers the core isolation story. Subsequent updates add:
 
-- **Live migration** — moving a running TD between platforms without breaking confidentiality (see [Live Migration](live-migration.md)).
+- **Live migration** — moving a running TD between platforms without breaking confidentiality (see [Live Migration]({{ site.baseurl }}/docs/core/tdx/live-migration/)).
 - **TD partitioning** — running up to 4 total VMs inside a single TD (one primary VM acting as a local hypervisor plus up to 3 nested guest VMs), so unmodified legacy guests can run in a TD without OS changes.
 - **VM-preserving updates** — patching the TDX Module at runtime in milliseconds instead of rebooting the host, targeting 99.999% availability.
-- **Trusted I/O** — bringing devices into the TD's trust boundary via TDISP (see [Trusted I/O](trusted-io.md)).
+- **Trusted I/O** — bringing devices into the TD's trust boundary via TDISP (see [Trusted I/O]({{ site.baseurl }}/docs/core/tdx/trusted-io/)).

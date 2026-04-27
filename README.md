@@ -27,7 +27,7 @@ Container fundamentals, Kata Containers, Confidential Containers (CoCo), and Kub
 gRPC and Open Policy Agent as they relate to confidential computing infrastructure.
 
 ### [Reference](https://ksayid.github.io/confidential-computing-notes/docs/misc/)
-Cloud fundamentals, a Microsoft Azure overview, Azure security architecture (infrastructure trust boundaries, encryption layers, double encryption), the Azure security model (shared responsibility, tenant isolation, customer data protection), the Azure platform trust chain (UEFI, Secure Boot, firmware integrity, code integrity, dm-verity, hashes, hypervisor), Azure hardware trust and key management (SoC, host attestation, THIM, encryption layers, HSMs, Secure Key Release), and supplementary notes.
+Cloud-platform references, organized as two slots per cloud — an **Overview** and a consolidated **Security Architecture** note that walks foundational → applied in five Parts: platform trust chain (silicon, UEFI, Secure Boot, firmware integrity, code integrity, dm-verity, hashes, hypervisor, confidential VMs/GPUs); infrastructure & tenant isolation (datacenters, networks, Fabric Controller, operator access, isolation spectrum, TCB-by-compute-mode); encryption & key management (host attestation, MAA, THIM, encryption at rest and in transit, double encryption, HSMs, Secure Key Release); shared responsibility & customer data (responsibility matrix, defense in depth, Customer Lockbox, residency, hardware disposition); plus a closing through-line and takeaways. Microsoft Azure is the first cloud covered. Plus cloud-agnostic fundamentals and a reading list. The structure leaves room for additional clouds.
 
 ## Local Development
 

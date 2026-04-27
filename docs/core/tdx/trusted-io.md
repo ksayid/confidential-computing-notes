@@ -2,7 +2,7 @@
 title: Trusted I/O (TDISP)
 parent: Intel TDX
 grand_parent: Core Concepts
-nav_order: 3
+nav_order: 2
 ---
 
 # Intel TDX Trusted I/O (TDISP)
@@ -53,4 +53,4 @@ Much of this design isn't Intel-specific. SPDM and IDE are general operating-sys
 
 First-generation TDX kept devices outside the trust boundary and paid for it with expensive software encryption and memory copying. This extension lets trusted devices operate as though they're inside the protected VM, with hardware-enforced isolation and link encryption replacing the software workarounds — and it does so through a standards-based architecture that isn't entirely proprietary to Intel.
 
-For a worked example of confidential computing actually extended to a peripheral today — using a vendor-specific design rather than the TDISP standard — see [NVIDIA GPU Confidential Computing](gpu-confidential-computing).
+For a worked example of confidential computing actually extended to a peripheral today — using a vendor-specific design rather than the TDISP standard — see [NVIDIA GPU Confidential Computing]({{ site.baseurl }}/docs/core/gpu-confidential-computing/).

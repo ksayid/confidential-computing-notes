@@ -30,7 +30,7 @@ Confidential Containers (CoCo) integrates Kubernetes with confidential computing
 * **Container runtimes** – Projects like Kata Containers and the `cc-runtime`
   launch pods inside small VMs to take advantage of the underlying TEE
   capabilities.
-* **Policy enforcement** – Integrations with tools like Open Policy Agent (OPA)
+* **Policy enforcement** – Integrations with tools like [Open Policy Agent (OPA)]({{ site.baseurl }}/docs/tools/open-policy-agent/)
   let operators define fine-grained rules for what a confidential pod may do
   once running inside the TEE boundary.
 

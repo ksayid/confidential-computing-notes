@@ -1,7 +1,7 @@
 ---
 title: Confidential AI
 parent: Core Concepts
-nav_order: 7
+nav_order: 9
 ---
 
 Confidential computing relies on trusted execution environments (TEEs), which create a secure perimeter where data remains encrypted in use. These environments provide the abstraction of data being encrypted at all times—from the perspective of an attacker, even someone with root privileges or access to the hypervisor. In essence, TEEs ensure that:
@@ -49,7 +49,7 @@ Recently, NVIDIA added enclave support for their H100 GPUs, which is a significa
 3. Once verified, a secure communication channel is established, ensuring all communication over PCIe is encrypted.
 4. This setup enables the CVM to generate a global attestation report, confirming that both the CPU enclave and the GPU are properly configured. Users can rely on this report to ensure their confidential VM is securely connected to the GPU(s). A secure channel is then established to transmit sensitive data to the GPU.
 
-For a deeper look at how NVIDIA actually implements GPU-CC — the architectural engines (FSP, GSP, SEC2, CE), the secure-boot and key-derivation flow, and a security analysis of each runtime data path — see [NVIDIA GPU Confidential Computing](gpu-confidential-computing).
+For a deeper look at how NVIDIA actually implements GPU-CC — the architectural engines (FSP, GSP, SEC2, CE), the secure-boot and key-derivation flow, and a security analysis of each runtime data path — see [NVIDIA GPU Confidential Computing]({{ site.baseurl }}/docs/core/gpu-confidential-computing/).
 
 ## Using Enclaves for Generative AI (GenAI)
 At a high level, using enclaves for GenAI is straightforward:
@@ -82,11 +82,14 @@ Confidential AI relies on hardware-based TEEs to shield data and code from unaut
 In short, the cloud provider physically owns the hardware, but the TEEs and attestation protocols ensure that all the data and execution states inside your enclave remain secure, confidential, and verifiably untampered with.
 
 ## Step-by-Step Example
+
+This worked example uses Azure-specific services. The Azure-side surfaces named below — **MAA** (Microsoft Azure Attestation), **THIM** (Trusted Hardware Identity Management), and **Managed HSM / Secure Key Release** — are described in detail in Part III of the [Microsoft Azure Security Architecture]({{ site.baseurl }}/docs/misc/microsoft-azure-security/#12-host-attestation-fleet-internal-verification) note. **OHTTP** (Oblivious HTTP, IETF RFC 9458) is a relay protocol that lets a client encrypt a request to a target service and route it through a proxy that knows the client's network identity but not the request body, while the target service sees the request body but not the client identity — splitting "who's asking" from "what they're asking."
+
 ### Step 1: Establish Trust and Obtain Encryption Keys
 1. The app contacts the Key Management Service (KMS) to ensure a secure connection with Azure services.
 2. The KMS retrieves keys from the Managed HSM.
-3. Azure Managed Attestation (MAA) validates the security status of the TEE.
-4. Trusted Hardware Identity Management (THIM) verifies the TEE’s identity using hardware-based credentials.
+3. Microsoft Azure Attestation (MAA) validates the security status of the TEE.
+4. Trusted Hardware Identity Management (THIM) verifies the TEE's identity using hardware-based credentials.
 5. The app generates digests to verify data integrity, and the KMS issues a receipt signature confirming the data has not been tampered with.
 6. The app retrieves the OHTTP public key configuration for encrypting data.
 
@@ -94,13 +97,13 @@ In short, the cloud provider physically owns the hardware, but the TEEs and atte
 The audio file is encrypted using the OHTTP public key obtained in Step 1, ensuring only the intended service can decrypt it.
 
 ### Step 3: Send Encrypted Request via OHTTP Proxy
-The app sends the encrypted request to the OHTTP proxy, which forwards it to the target service while keeping the service’s identity hidden from the public network.
+The app sends the encrypted request to the OHTTP proxy, which forwards it to the target service while keeping the service's identity hidden from the public network.
 
 ### Step 4: Decrypt and Process the Data in the TEE
 The encrypted request is decrypted within the TEE, which is continuously attested to ensure it remains in a trusted state.
 
 ### Step 5: Perform Inference Using the Whisper Model in the TEE
-The Whisper model converts speech to text securely inside the TEE, with Azure MAA verifying the TEE’s security throughout the process.
+The Whisper model converts speech to text securely inside the TEE, with MAA verifying the TEE's security throughout the process.
 
 ### Step 6: Encrypt the Response for Secure Transmission Back
 The response is encrypted within the TEE before being sent back through the OHTTP proxy to the client.

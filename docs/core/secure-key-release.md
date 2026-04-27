@@ -1,7 +1,7 @@
 ---
 title: Secure Key Release
 parent: Core Concepts
-nav_order: 6
+nav_order: 8
 ---
 
 ## Key Management System (KMS)
@@ -30,30 +30,11 @@ Verifier (Attestation Service) — The Attestation service verifies the evidence
 Key management service — A service for securely storing, managing, and backing up cryptographic keys used by applications and users.
 
 ## Secure key release sidecar
-Confidential containers on Azure Container Instances provide a sidecar open source container for attestation and secure key release. This sidecar instantiates a web server, which exposes a REST API so that other containers can retrieve a hardware attestation report or a Microsoft Azure Attestation token via the POST method. The sidecar integrates with Azure Key vault for releasing a key to the container group after validation has been completed.
+Confidential containers on Azure Container Instances provide a sidecar open source container for attestation and secure key release. This sidecar instantiates a web server, which exposes a REST API so that other containers can retrieve a hardware attestation report or a Microsoft Azure Attestation (MAA) token via the POST method. The sidecar integrates with Azure Key Vault for releasing a key to the container group after validation has been completed. (MAA, the Azure attestation service that validates TEE evidence and issues signed JWTs, is described in detail in §12.4 of the [Microsoft Azure Security Architecture]({{ site.baseurl }}/docs/misc/microsoft-azure-security/#microsoft-azure-attestation-maa-the-customer-facing-service) note.)
 
-## Azure Key Vault Container Types
-Azure Key Vault is a service that stores and manages cryptographic keys, secrets, and certificates. It has two main container types:
+## Azure-specific KMS surfaces
 
-1. Vaults: A multi-tenant service that comes in two different tiers:
-    * Standard SKU: Supports only software-protected keys.
-    * Premium SKU: Supports both software-protected keys and keys protected by an HSM.
-2. Managed HSM:
-    * Standard B1: Supports only HSM-backed keys.
-
-## Accessing Keys in Azure Key Vault
-1. Obtain an Access Token
-    * Use the Azure Instance Metadata Service (IMDS) to get a token for Azure Key Vault.
-    * The managed identity must be enabled for the Azure resource to use IMDS.
-2. Invoke Key Vault’s REST API
-    * Make an HTTP request to retrieve a key.
-    * Include the access token as a Bearer token in the Authorization header.
-    * If the list operation isn’t allowed, you must know the exact key name (and optionally its version).
-
-## Controlling Access to Keys
-By default, if a security principal has permission to get keys, they can retrieve all keys if they know their names. This can be a potential security risk.
-
-Mitigation Option: Use separate Key Vaults for different applications, environments, and regions, per Azure’s best practices.
+The Azure-side KMS lineup (Key Vault Standard, Key Vault Premium, Managed HSM, Cloud HSM, Payment HSM) and the per-option tradeoffs around tenancy, FIPS level, and use case are catalogued in §16 of the [Microsoft Azure Security Architecture]({{ site.baseurl }}/docs/misc/microsoft-azure-security/#16-choosing-a-key-manager-the-five-way-decision) note. Operationally, an Azure VM obtains a Key Vault access token through the Instance Metadata Service (IMDS) using a managed identity, then invokes the vault's REST API with the token as a `Bearer` credential; if list permission is withheld, callers must know the exact key name. A common access-control hardening pattern is to use **separate vaults per application, environment, and region** so that "permission to get keys" does not leak across blast-radius boundaries.
 
 ## Introducing Secure Key Release
 Secure Key Release is a policy-based method for releasing keys with additional checks to ensure the requesting environment is trustworthy. This is especially useful for Trusted Execution Environments (TEEs) like Confidential VMs.

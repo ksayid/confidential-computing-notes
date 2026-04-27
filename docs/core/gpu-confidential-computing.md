@@ -1,7 +1,7 @@
 ---
 title: NVIDIA GPU Confidential Computing
 parent: Core Concepts
-nav_order: 11
+nav_order: 7
 ---
 
 # NVIDIA GPU Confidential Computing
@@ -10,7 +10,7 @@ NVIDIA's GPU Confidential Computing (GPU-CC), introduced with the Hopper generat
 
 ## The trust boundary
 
-GPU-CC only makes sense paired with CPU-side confidential computing. The CPU side ([Intel TDX](tdx-architecture) or AMD SEV-SNP) creates a confidential VM (CVM) whose memory is encrypted with a hardware-managed key the host can't see. The GPU is "passed through" — exclusively assigned — to that CVM. GPU-CC then extends the trust line out to the GPU itself.
+GPU-CC only makes sense paired with CPU-side confidential computing. The CPU side ([Intel TDX]({{ site.baseurl }}/docs/core/tdx/) or AMD SEV-SNP) creates a confidential VM (CVM) whose memory is encrypted with a hardware-managed key the host can't see. The GPU is "passed through" — exclusively assigned — to that CVM. GPU-CC then extends the trust line out to the GPU itself.
 
 ```
    ┌─────────────────────── HOST (untrusted) ───────────────────────┐
@@ -153,16 +153,16 @@ GPU-CC instances are available on the major clouds (Azure, GCP, AWS, OCI) on H10
 ## Practical limitations
 
 - **Multi-GPU is constrained.** First-generation H100 GPU-CC supports only a single GPU passed through to a CVM; NVLink-protected multi-GPU configurations are part of newer NVIDIA Confidential Computing documentation but availability lags single-GPU.
-- **Trusted I/O (TDISP) isn't yet the integration point.** GPU-CC predates and bypasses [TDISP](tdx-trusted-io), the PCI-SIG standard for trusted device assignment. NVIDIA uses its own SPDM-based handshake instead. Future GPUs are likely to converge with TDISP as the TDX and SEV-TIO ecosystems mature.
+- **Trusted I/O (TDISP) isn't yet the integration point.** GPU-CC predates and bypasses [TDISP]({{ site.baseurl }}/docs/core/tdx/trusted-io/), the PCI-SIG standard for trusted device assignment. NVIDIA uses its own SPDM-based handshake instead. Future GPUs are likely to converge with TDISP as the TDX and SEV-TIO ecosystems mature.
 - **The CVM is the weakest link.** Hardening the CVM image (minimal kernel, no extra services, attested boot) matters as much as anything GPU-CC itself does.
 - **Closed source.** Significant parts of GPU-CC live in NVIDIA-signed firmware and proprietary CUDA components. End users must trust NVIDIA's correctness; independent audit is partial at best.
 - **AES-GCM IV exhaustion is a long-tail concern.** Session keys use AES-GCM, whose security depends on never reusing an IV. Per-channel IV counters make this a long-term design consideration rather than a near-term issue, but extremely long-lived sessions on heavily-used channels are theoretically a concern.
 
 ## Related Pages
 
-- [Confidential AI](confidential-ai) — running AI workloads inside TEEs, including the CPU-side context GPU-CC pairs with.
-- [Intel TDX — Architecture & Threat Model](tdx-architecture) — one of the two CPU-CC technologies that hosts the CVM.
-- [Intel TDX — Trusted I/O (TDISP)](tdx-trusted-io) — the standards-based future for confidential I/O, contrasted with NVIDIA's vendor-specific approach.
+- [Confidential AI]({{ site.baseurl }}/docs/core/confidential-ai/) — running AI workloads inside TEEs, including the CPU-side context GPU-CC pairs with.
+- [Intel TDX]({{ site.baseurl }}/docs/core/tdx/) — one of the two CPU-CC technologies that hosts the CVM.
+- [Intel TDX — Trusted I/O (TDISP)]({{ site.baseurl }}/docs/core/tdx/trusted-io/) — the standards-based future for confidential I/O, contrasted with NVIDIA's vendor-specific approach.
 
 ## Sources
 
