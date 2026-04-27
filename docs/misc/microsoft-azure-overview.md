@@ -1,7 +1,7 @@
 ---
 title: Microsoft Azure Overview
 parent: Reference
-nav_order: 3
+nav_order: 1
 ---
 
 Microsoft Azure is Microsoft's public cloud platform — a global network of data centers offering more than 200 services that organizations rent to run software, store data, build applications, and increasingly to develop and deploy AI systems. Originally launched in 2010 as "Windows Azure," the platform was renamed Microsoft Azure in 2014 to reflect a strategic pivot: rather than being a Windows-centric extension of Microsoft's server stack, Azure became a multi-platform cloud that runs Linux as readily as Windows, supports nearly every major programming language, and competes head-on with Amazon Web Services and Google Cloud.

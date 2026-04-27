@@ -2,12 +2,12 @@
 title: Live Migration
 parent: Intel TDX
 grand_parent: Core Concepts
-nav_order: 4
+nav_order: 3
 ---
 
 # TDX Live Migration
 
-Intel TDX v1.5 adds live migration on top of the TDX v1.0 confidential-VM machinery described in the [TDX overview](index.md). The same brownout/blackout shape from the [generic case](../live-migration.md) still applies — what changes is who can see the state in transit.
+Intel TDX v1.5 adds live migration on top of the TDX v1.0 confidential-VM machinery described in the [TDX overview]({{ site.baseurl }}/docs/core/tdx/). The same brownout/blackout shape from the [generic case]({{ site.baseurl }}/docs/core/live-migration/) still applies — what changes is who can see the state in transit.
 
 ## Why it's harder under TDX
 

@@ -1,10 +1,12 @@
 ---
 title: TEEs in Practice
 parent: Core Concepts
-nav_order: 9
+nav_order: 3
 ---
 
 # TEEs in Practice
+
+This note follows the [TEE security principles]({{ site.baseurl }}/docs/core/tee-security-principles/) by looking at where TEEs actually show up — what works, what doesn't, and what's still open — across crypto infrastructure and AI agent systems.
 
 ## The Big Picture
 

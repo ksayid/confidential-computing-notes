@@ -1,7 +1,7 @@
 ---
 title: Live Migration
 parent: Core Concepts
-nav_order: 8
+nav_order: 10
 ---
 
 # Live Migration
@@ -108,4 +108,4 @@ _Notes to come._
 
 ## Confidential VMs
 
-Live migration of a confidential VM is fundamentally harder because the host can no longer see TD memory or state. See [TDX Live Migration](tdx/live-migration.md) for how Intel TDX v1.5 handles this with Migration TDs and authenticated migration bundles.
+Live migration of a confidential VM is fundamentally harder because the host can no longer see TD memory or state. See [TDX Live Migration]({{ site.baseurl }}/docs/core/tdx/live-migration/) for how Intel TDX v1.5 handles this with Migration TDs and authenticated migration bundles.

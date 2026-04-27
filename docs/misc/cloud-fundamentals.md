@@ -1,7 +1,7 @@
 ---
 title: Cloud Fundamentals
 parent: Reference
-nav_order: 1
+nav_order: 3
 ---
 
 ## Autoscaling

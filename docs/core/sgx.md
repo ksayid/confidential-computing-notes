@@ -1,7 +1,7 @@
 ---
 title: Intel SGX
 parent: Core Concepts
-nav_order: 3
+nav_order: 4
 ---
 
 ## 1. Introduction

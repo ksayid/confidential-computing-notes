@@ -1,5 +1,5 @@
 ---
-title: GRPC
+title: gRPC
 parent: Tools & Frameworks
 nav_order: 1
 ---

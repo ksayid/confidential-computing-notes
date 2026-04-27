@@ -25,7 +25,7 @@ Kubernetes is a container orchestration platform. In the context of confidential
 - You could isolate etcd in an enclave, but architectural changes might be required.  
 - Evaluate your threat model to see if enclaves add enough protection for your use case.
 
-**See also:** [Kata Containers]({{ "docs/containers/kata-containers/" | relative_url }}), [Confidential Containers]({{ "docs/containers/confidential-containers/" | relative_url }})
+**See also:** [Kata Containers]({{ site.baseurl }}/docs/containers/kata-containers/), [Confidential Containers]({{ site.baseurl }}/docs/containers/confidential-containers/)
 
 ## Helm
 Helm is an open-source tool that helps you define, install, and manage applications in Kubernetes. Often described as the “package manager for Kubernetes,” Helm bundles Kubernetes manifests (such as Deployments, Services, and ConfigMaps) into reusable, version-controlled “charts.” Using charts, you can:
