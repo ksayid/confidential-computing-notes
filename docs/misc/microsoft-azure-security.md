@@ -470,6 +470,8 @@ Attestation verdicts are not static. When Intel issues a **TCB recovery (TCB-R)*
 - **AKS Confidential Containers (the Azure Kubernetes Service variant that runs pods inside TEEs) and confidential-VM nodes** — reach THIM via the per-host IMDS path.
 - **Azure Key Vault Premium and Managed HSM Secure Key Release (SKR)** — transitive consumer; SKR validates an MAA token, and MAA in turn relied on THIM to validate the underlying quote. See §17.
 
+For a compact producer / consumer / verifier view across quote, event log, collateral, token, policy, and key release, see the [artifact map](#artifact-map) at the end of §17.
+
 **Flag:** the documented endpoint is global (`global.acccache.azure.net`); per-region URLs are not published, and the docs do not describe regional failover behavior beyond the in-host IMDS cache. Treat THIM as a global anycast surface backed by a per-host cache.
 
 ## 14. Encryption Layered on the Trusted Foundation
@@ -664,6 +666,8 @@ Notable gaps and quirks worth knowing (verified against Microsoft's CMK support 
 
 §§1–2 introduced silicon-rooted hardware identity. §16 chose where the key lives. **Secure Key Release (SKR)** is the mechanism that ties the two ends together by gating key release on a fresh attestation token.
 
+For a compact producer / consumer / verifier view across all moving parts in this flow, see the [artifact map](#artifact-map) at the end of this section.
+
 SKR is a feature of Azure Key Vault Premium and Managed HSM. A key is created with `exportable=true` and an attached **release policy** — a JSON document that pattern-matches MAA claims: the TEE type, the image's **SVN** (security version number), and SGX-specific values like **MRENCLAVE** (the hash of the enclave's measured contents) and **MRSIGNER** (the hash of the public key that signed the enclave), plus the publisher, version, and debug flag. On Managed HSM, using the key requires the role `Managed HSM Crypto Service Release User`.
 
 The flow:
@@ -682,6 +686,34 @@ The chain end-to-end, made explicit:
 Each step inherits trust from the one below it. This is what makes confidential VM disk encryption credible against a malicious operator threat model — a host that has not produced a valid attestation literally cannot obtain the key.
 
 **Customer Lockbox is unrelated to all of this.** It governs how Microsoft support engineers obtain temporary access to customer data; it does not interact with Key Vault, CMK, or SKR. The two are sometimes confused because both involve "approving access to something sensitive." Customer Lockbox is covered in §20.3 below.
+
+### Artifact map
+
+A compact producer / consumer / verifier view across all the moving parts in the SKR pipeline (Part III as a whole — host attestation in §12, THIM in §13, SKR here in §17):
+
+| Artifact | Producer | Consumer(s) | Primary verifier |
+|---|---|---|---|
+| **Quote** (TEE evidence: SNP report / TDX or SGX quote) | TEE platform + quoting component inside the workload environment | MAA (direct), optionally customer-side verifier | MAA quote-verification pipeline (using vendor collateral) |
+| **Event log** (TPM/TCG boot measurements, where applicable) | Boot chain + attestation agent on the measured host/VM | Host attestation service and any verifier that replays PCRs | Host attestation service / verifier replay logic |
+| **Collateral** (PCK/VCEK chains, CRLs, TCB Info, QE identity) | Intel PCS / AMD KDS upstream, cached and served by THIM | MAA, DCAP/QPL-based verifiers, az-dcap-client | Verifier certificate-path and revocation checks; TCB policy logic |
+| **Token** (MAA-signed JWT with claims, nonce, policy hash) | Microsoft Azure Attestation (MAA) | Key Vault Premium / Managed HSM SKR endpoint; relying-party apps | JWT signature validation (JWKS/OIDC metadata) + claim checks |
+| **Policy** (SKR release policy / attestation policy hash expectation) | Key owner / security admin | Key Vault Premium / Managed HSM | Policy engine in HSM + relying-party comparison against token claims |
+
+Sequence-style flow:
+
+- Workload asks TEE to produce a **quote** bound to a fresh nonce.
+- Workload submits quote to **MAA**.
+- MAA fetches/uses **collateral** (via THIM) and verifies quote authenticity + TCB status.
+- MAA issues signed **token** (JWT) containing claims including nonce (`rp_data`) and policy hash claim(s).
+- Workload presents token to **SKR** (Key Vault Premium or Managed HSM).
+- SKR evaluates **policy** against token claims.
+- If policy matches, wrapped key is released and unwrapped in the TEE.
+
+Failure points (and what breaks):
+
+- **Expired collateral** → quote cannot be validated to current revocation/TCB state; MAA/verifier rejects attestation, so no token or token marked unusable for SKR.
+- **Nonce mismatch** → freshness check fails (`rp_data` does not match challenge); replay resistance triggers rejection before key release.
+- **Policy hash mismatch** → token's `x-ms-policy-hash` (or equivalent expected claim) differs from configured release policy expectation; SKR denies release.
 
 ---
 
@@ -962,6 +994,10 @@ All five HSM options in §16 are cryptographically strong; the meaningful differ
 - Keep **Managed HSM security-domain quorum private keys** on separate encrypted media in separate physical locations. Loss is unrecoverable.
 - **Monitor Key Vault and Managed HSM data-plane logs** to Log Analytics. Without that, no forensic trail.
 - Configure Key Vault access logs and Azure Rights Management Service (RMS) usage logging.
+
+### On verifying the chain
+
+- Attestation, not signature checking, is what proves the chain end-to-end. PCR quotes from TPM 2.0 (or attestation reports from SEV-SNP / TDX) give a relying party an auditable record of what ran. The host-attestation, THIM, and Secure Key Release flow is built on top of these PCRs (§§12–17); the [artifact map](#artifact-map) at the end of §17 is the concise producer/consumer/verifier view of quote, collateral, token, and policy handoffs.
 
 ### On hash hygiene
 

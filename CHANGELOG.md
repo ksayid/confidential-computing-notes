@@ -367,3 +367,13 @@ The per-cloud pattern moved from **five slots** to **two slots**:
 - `grep -rn "microsoft-azure-platform-trust-chain\|microsoft-azure-hardware-trust-and-keys\|microsoft-azure-security-model" docs/ index.md SCHEMA.md README.md` returns no live references (only historical mentions in this CHANGELOG).
 - All four anchor links into the merged file resolve to existing IDs in the rendered HTML.
 - `docs/misc/` now contains exactly five files (one less than before): `index.md`, `microsoft-azure-overview.md`, `microsoft-azure-security.md`, `cloud-fundamentals.md`, `scratch.md`. nav_orders are contiguous 1–4 across the four content files.
+
+## Merge resolution against `main` (PR #46 absorbed)
+
+While this PR was open, `main` advanced with PR #46 ("Add Azure attestation/SKR artifact map and cross-links"). Three modify/delete or content conflicts were resolved as follows:
+
+- **`microsoft-azure-hardware-trust-and-keys.md`** (modify/delete): re-deleted. The new "Artifact Map" section that PR #46 added to the original file was absorbed into the merged note as a `### Artifact map` subsection at the end of §17 (Secure Key Release).
+- **`microsoft-azure-platform-trust-chain.md`** (modify/delete): re-deleted. The "On verifying the chain" practical takeaway PR #46 introduced is now part of the merged note's §22 Practical Takeaways.
+- **`microsoft-azure-security.md`** (content conflict): kept the merged-note content for the structurally-conflicting hunk (the origin/main version was a stale paragraph from the pre-merge "Infrastructure & Tenant Isolation" file). The artifact-map cross-link references PR #46 added in §13 (THIM consumers) and at the top of §17 (SKR intro) were preserved by adding equivalent in-file anchor links (`#artifact-map`).
+
+Net effect: PR #46's artifact-map content lives intact inside the merged note. No facts lost.
