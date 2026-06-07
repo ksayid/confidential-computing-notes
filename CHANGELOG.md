@@ -1,5 +1,65 @@
 # Changelog
 
+# Virtualization-and-hypervisors pass
+
+Added a canonical home for cloud-agnostic virtualization and hypervisor concepts, and substantially expanded the paravisor note from new OpenHCL material.
+
+## Why
+
+The repo had a gap: generic virtualization (VMM, hosted vs. bare-metal, Type 1 vs. Type 2), generic hypervisor features (HA / FT / LM), and the generic hypervisor attack model (host-OS compromise, VM escape) had no canonical home. `microsoft-azure-security.md` §8 covers **Azure Hyper-V specifics** (partition model, VMBus, VSP/VSC) but explicitly references "type-1, microkernel-style" as if the taxonomy lived elsewhere — and there was no "elsewhere." The notes integrated in this pass provided the missing baseline plus a much richer OpenHCL/paravisor narrative.
+
+## Files affected
+
+### Created
+
+- **`docs/core/virtualization.md`** (new). Cloud-agnostic substrate. Owns: VMM concept; host machine / VM / VMM terminology; partitioning / encapsulation / isolation; hosted vs. bare-metal VMM approaches; benefits (availability, security, cost, adaptability, load balancing); the hypervisor (1956 IBM origin, PMB / LMB memory management, host / guest vocabulary); Type 1 vs. Type 2 taxonomy; HA / FT / LM features (with the limitation chain HA → FT closes); why hypervisor-based systems are secure in principle; VMs in the cloud and hypervisor security (architecture-determines-attack-surface, attack route 1 via host OS, attack route 2 via VM escape / jailbreak, virtual library / migration / encryption attacks). Cross-links to `paravisor.md` for the trust-boundary hand-off, to `confidential-computing-concepts.md` for the CC framing, to `tdx/` for one concrete CVM realization, to `live-migration.md` for LM mechanics, and to `microsoft-azure-security.md` §8 for Azure-specific Hyper-V.
+
+### Expanded
+
+- **`docs/core/paravisor.md`** (rewritten end-to-end). Same canonical domain ("paravisor architecture, OpenHCL, VMGS, supporting unmodified guests inside CVMs"), but the narrative now leads with the trust-boundary gap that confidential computing creates, explicitly states that the paravisor is **neither Type 1 nor Type 2** in the [virtualization]({{ site.baseurl }}/docs/core/virtualization/) taxonomy (it is defined by position relative to the guest, not relative to hardware/host OS), and adds new sections:
+  - **Where the paravisor sits** — layering diagram, comparison table vs. Type 1 / Type 2 / paravisor, privilege levels per platform (Hyper-V VTL2 + VSM, TDX L1 VMM, SEV-SNP VMPL0).
+  - **OpenHCL services** — device emulation (vTPM, serial), device translation (NVMe → para-SCSI for accelerated I/O), diagnostics, non-enlightened guest support; plus the VMGS file, interrupt and exception management, and attestation that the previous file already mentioned.
+  - **OpenHCL architecture** — three components (OpenVMM in Rust, boot loader, small customized Linux kernel) with the rationale for each. Microsoft built the first paravisor in the industry (used in Azure under earlier names for years); >1.5M VMs on OpenHCL per month as of October 2024; ships in Azure Boost SKUs and future confidential VM SKUs.
+  - **Fully enlightened vs. paravisor-assisted guests** — comparison table; Azure runs all IaaS confidential VMs via a paravisor today, supporting Windows ≥ ~Windows 10 / Server 2019 and Linux ≥ 5.19 (SNP) / 6.6 (SNP+TDX).
+  - **Why Windows specifically needs a paravisor** — APIC emulation (Windows inlines interrupt handling in drivers; Linux uses kernel service routines) and vTPM (cannot be implemented with enlightenments alone). Windows will continue via paravisor; Linux future is being evaluated either way.
+  - **OpenHCL vs. COCONUT-SVSM** — SVSM serves fully enlightened guests via new custom interfaces; OpenHCL serves unmodified guests via existing standard architectural interfaces (PCI virtualization, existing vTPM contracts). Future: OpenHCL may adopt Rust-based COCONUT-SVSM as its kernel layer for stronger memory safety.
+  - **Roadmap** — TDX in Azure (5th-Gen Xeon + 4th-Gen backport; Azure first CSP with TDX preview and Windows-on-TDX support), Arm CCA Realms via the co-created Planes feature, AMD SEV-SNP feature completeness via VMPLs, KVM as host, Red Hat collaboration.
+
+  Fixed three typos in the previous file: **OpenHL → OpenHCL**, **SBSM → SVSM**, **VMPLO → VMPL0**.
+
+### Renumbered (`nav_order` only, no content change)
+
+| File | nav_order before | nav_order after |
+|---|---|---|
+| `docs/core/virtualization.md` | — (new) | 5 |
+| `docs/core/tdx/index.md` | 5 | 6 |
+| `docs/core/paravisor.md` | 6 | 7 |
+| `docs/core/gpu-confidential-computing.md` | 7 | 8 |
+| `docs/core/secure-key-release.md` | 8 | 9 |
+| `docs/core/confidential-ai.md` | 9 | 10 |
+| `docs/core/live-migration.md` | 10 | 11 |
+
+The new virtualization note sits between SGX (process-level CC, doesn't depend on virtualization) and TDX (VM-level CC, builds directly on virtualization concepts) — so the reading order moves from "what is CC" → "process-level CC" → **"the virtualization substrate"** → "VM-level CC" → "paravisor and CC-GPU" → "key release, AI, migration".
+
+## Cross-link updates
+
+- `index.md` — added a one-line entry for `virtualization.md`; expanded the paravisor line to mention OpenHCL components, Windows-specific rationale, and the COCONUT-SVSM contrast.
+- `SCHEMA.md` — added an OWNS / NOT here row for `virtualization.md`; expanded the paravisor row to make the new architectural ownership explicit; added "generic Type 1/Type 2 hypervisor concepts and VM-escape attack model" to the "NOT here" column of `microsoft-azure-security.md` (so Azure §8 keeps its canonical Hyper-V ownership without claiming the cloud-agnostic baseline).
+
+## What this pass did NOT change
+
+- `microsoft-azure-security.md` §8 keeps its canonical ownership of **Azure Hyper-V architecture** (microkernel-style, root/guest partitions, VMBus, VSP/VSC, Azure-specific isolation enforcement). The new `virtualization.md` covers the **generic** hypervisor concepts that note already builds on — no facts were moved from Azure §8.
+- The `paravisor.md` file's previously stated services (VMGS, interrupt/exception management, attestation) were preserved verbatim in spirit; the rewrite wove them into the new structure rather than appending to it.
+- No other CC/container/tools notes were touched.
+
+## Verification
+
+- All previously canonical content remains in its canonical home: SCHEMA's verification greps for DCasv5 / DCesv6 / NCC / envelope encryption / Customer Lockbox / Marvell LiquidSecurity still land where they used to.
+- `bundle exec jekyll build` runs cleanly.
+- Cross-link convention: every cross-section link in the new and rewritten content uses `{{ site.baseurl }}/docs/...` with a trailing slash.
+
+---
+
 This pass restructured file boundaries and reading order across the repo so that each file owns a clear, non-overlapping domain and foundational concepts come before things built on them. Paragraph-level deduplication was deferred to a later pass.
 
 ## Reading order, before vs. after
