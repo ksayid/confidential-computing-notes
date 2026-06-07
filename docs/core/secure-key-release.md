@@ -1,7 +1,7 @@
 ---
 title: Secure Key Release
 parent: Core Concepts
-nav_order: 8
+nav_order: 9
 ---
 
 ## Key Management System (KMS)

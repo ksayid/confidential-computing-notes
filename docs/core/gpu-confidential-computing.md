@@ -1,7 +1,7 @@
 ---
 title: NVIDIA GPU Confidential Computing
 parent: Core Concepts
-nav_order: 7
+nav_order: 8
 ---
 
 # NVIDIA GPU Confidential Computing
